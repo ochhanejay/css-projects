@@ -1,0 +1,110 @@
+
+            CSS [Cascading Style Sheet]
+
+inline
+embedded / internal
+css
+=======================================================
+Attributes:                     Description
+-------------                 ------------------
+type:                           MIME type
+                              : it specifies the style language MIME type
+                              : Multipurpose Mail Extensions
+                              : it is responsible to make browser understand the code snippet of styles.
+                              : for styles the type is "text/css"
+
+                              Eg:
+
+                                <html>
+                                    <head>
+                                        <style type="text/css">
+                                            h1 {
+                                                background-color: bisque;
+                                                color: brown;
+                                                border: solid 2px green;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <h1>Hello World</h1>
+                                    </body>
+                                </html>
+-------------------------------------------------------------------------
+media                           - it defines which media the style should be applied to.
+                                - Media types describe the general category of a device, which can be screen, printer, speech etc. 
+
+                                    Eg:
+                                    <html>
+                                        <head>
+                                            <style type="text/css" media="all">
+                                                h1 {
+                                                    background-color: bisque;
+                                                    color: brown;
+                                                    border: solid 2px green;
+                                                    text-align: center;
+                                                }
+                                            </style>
+                                        </head>
+                                        <body>
+                                            <h1>Hello World</h1>
+                                        </body>
+                                    </html>
+
+                                    -   you can use values:
+                                            screen, print, all, speech
+-----------------------------------------------------------------------------
+Performance difference between internal and external css
+First: try intenal css and check the Performance on browser
+Second: try external css and check the Performance on browser
+
+                                    <html>
+                                        <head>
+                                            <style type="text/css" media="all">
+                                                h1 {
+                                                    background-color: bisque;
+                                                    color: brown;
+                                                    border: solid 2px green;
+                                                    text-align: center;
+                                                }
+                                            </style>
+                                            <!-- <link rel="stylesheet" href="first.css" type="text/css"> -->
+                                        </head>
+                                        <body>
+                                            <h1>Hello World</h1>
+                                        </body>
+                                    </html>
+--------------------------------------------------------------------------
+                            Styles Syntax
+
+1)  Inline Syntax
+
+    <h1 style="attributes1:value;attributes2:value;">Hello World</h1>
+
+2)  Intenal/Embedded and External Style Sheet
+
+    selector {
+        attributes1: value;
+        attributes2: value;
+    } 
+------------------------------
+-   A selector specifies the target location where the given effects are applied
+
+-   The primary selectors used in styles are
+
+    -   Type selector
+
+    -   ID selector
+
+    -   Class Selector
+
+------------------------------------------------------------------------
+Type Selector
+    It specifies directly the tag name where you want the style to apply. Like h1, hr, br, strong, img, div etc.
+    
+
+
+
+
+=======================================================
+Git download
+git clone https://github.com/ochhanejay/css-projects.git
