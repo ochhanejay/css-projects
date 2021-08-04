@@ -212,7 +212,23 @@ Class Selector:
 
 ---------------------------------------------------------------------
 
+=======================================================
+Git download
+    :   https://git-scm.com/downloads
+git clone https://github.com/ochhanejay/css-projects.git
+    
+    :   do your changes
 
+git add .
+
+git commit -m "your-message"
+        -> git config --global user.name "FIRST_NAME LAST_NAME"
+        -> git config --global user.email "MY_NAME@example.com"
+
+git push
+        ->  browser
+        ->  id
+        ->  password
 
 
 
