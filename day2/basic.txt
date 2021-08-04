@@ -1,0 +1,220 @@
+-   The primary selectors used in styles are
+
+    -   Type selector
+
+    -   ID selector
+
+    -   Class Selector
+
+-------------------------------------------------------------------------
+ID selector
+
+    -   Styles can define a set of effects with an ID reference "#anyUniqueId"
+
+    -   Any HTML element can access these effects by referring to ID.
+
+    Syntax:
+        -define
+        #anyUniqueId {
+            attributes1: value;
+            attributes2: value;
+        }
+        -use
+        <h1 id="anyUniqueId">Hello</h1>
+        <p id="anyUniqueId">Hi</p>
+    ------------------------------------------------------------------
+    - You can apply effects only to element what you want.
+    
+    Eg:
+
+                <html>
+                    <head>
+                        <style>
+                            #effects {
+                                background-color: aqua;
+                                color: blueviolet;
+                                text-align: center;
+                                border: 2px solid black;   
+                            } 
+                            #effe2 {
+                                color: brown;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1 id="effects">Hello</h1>
+                        <h1 id="effe2">Hello1</h1>
+                        <h1 id="effe2">Hello2</h1>
+                        <p id="effects">Hi hi</p>
+                        <div>div div</div>
+                    </body>
+                </html>
+    ------------------------------------------------------------------
+    Problem:
+        -   Every HTML tag can refer to only one ID
+        -   if your styles are defined in multiple groups you can't apply all groups to one element.
+
+                <html>
+                    <head>
+                        <style>
+                            #effects {
+                                background-color: aqua;
+                                color: blueviolet;
+                                border: 2px solid black;   
+                            } 
+                            #effe2 {
+                                text-align: center;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                    <!-- invlid -->
+                        <h1 id="effects effe2">Hello</h1>
+                        <h1 id="effects" id="effe2">Hello</h1>
+                    </body>
+                </html>
+---------------------------------------------------------------------
+Class Selector:
+    - A class selector is defined by using "." dot operator and followed by the name of the class.
+
+    - Classes are applied to any element by using "class" attributes.
+
+    - Every element can implement multiple Classes seperated with "spaces".
+
+    Eg:
+
+                <html>
+                    <head>
+                        <style>
+                            .effects {
+                                background-color: aqua;
+                                color: blueviolet;   
+                            }
+                            .effe2 {
+                                text-align: center;
+                            }
+                            .border-index{
+                                border: 2px solid black;
+                            } 
+                        </style>
+                    </head>
+                    <body>
+                        <h1 class="effects effe2 border-index">Hello</h1>
+                        <h1 class="effects effe2" >Hello1</h1>
+                        <h1>Hello2</h1>
+                    </body>
+                </html>
+
+
+-----------------------------------------------------------------------------
+ -  CSS selectors are further classified into various groups based on their behaviour
+        ->   Combinator / Rational selectors
+        ->   Attribute Selector
+        ->   Psuedo selectors
+        ->   Structural Psuedo selectors.
+
+-   Rational or Combinator: These are based on parent and child hierarchy as well the relationship with other elements.
+    :   Descendant selectorr-   with the help of space
+    :   Syntax -                parent Child {}
+
+                    <html>
+                        <head>
+                            <style> 
+                                ol li {
+                                    background-color: chartreuse;
+                                }    
+                            </style>
+                        </head>
+                        <body>
+                            <ol>
+                                <li>Hello1</li>
+                                <li>Hello2</li>
+                                <li>Hello3</li>
+                            </ol>
+                            <ul>
+                                <li>Hi1</li>
+                                <li>Hi2</li>
+                                <li>Hi2</li>
+                            </ul>
+                        </body>
+                    </html>
+    
+    
+    : Child Selector:   It applies effects only to the direct child of parent element.
+                        <html>
+                            <head>
+                                <style> 
+                                    thead > tr{
+                                        background-color: chartreuse;
+                                    }    
+                                    div > span > i {
+                                        color: red;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div>This is <span>my <i>life</i></span></div>
+                                
+                                <table width="200px" border="1">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Max</td>
+                                            <td>60</td>
+                                        </tr>
+                                        <tr>
+                                            <td>well</td>
+                                            <td>70</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </body>
+                        </html>
+    
+    
+    : Adjacent sibling Combinator
+                    :   It defines effects to an element which is specified immediately after another element.
+                    :   Syntax
+                            A-element + B- element {}
+
+                    Eg:
+                        <html>
+                            <head>
+                                <style> 
+                                    h1 + p {
+                                        color: red;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <h1>hello</h1>
+                                <p>hi</p>
+                                <p>hi1</p>
+                                <p>hi2</p>
+                            </body>
+                        </html>
+    
+    
+    General sibling Combinator:
+                    it defines effects to all ele which are specified after the current element.   
+
+                    -   Syntax:
+                            A-element ~ B - element {}
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+

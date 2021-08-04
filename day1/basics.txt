@@ -99,12 +99,32 @@ Second: try external css and check the Performance on browser
 
 ------------------------------------------------------------------------
 Type Selector
-    It specifies directly the tag name where you want the style to apply. Like h1, hr, br, strong, img, div etc.
+    -   It specifies directly the tag name where you want the style to apply. Like h1, hr, br, strong, img, div etc.
+    -   You can't ignore effects for any specific occurance of element defined with same tag.
+                                Eg:
+                                <html>
+                                    <head>
+                                        <style type="text/css" media="all">
+                                            h1 {
+                                                background-color: bisque;
+                                                 border: solid 2px green;
+                                                text-align: center;
+                                            }
+                                        </style>
+                                    
+                                    </head>
+                                    <body>
+                                        <h1 >Hello World</h1>
+                                        <h1 >Hi</h1>
+                                        <h1 >Hello </h1>
+                                    </body>
+                                </html>
+    -   We want to ignore the css for the last h1 tag, but we can't.
+    -   Problem: you can't ignore it.
+-------------------------------------------------------------------------
+ID selector
     
-
-
-
-
+    -    
 =======================================================
 Git download
 git clone https://github.com/ochhanejay/css-projects.git
