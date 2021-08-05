@@ -1,0 +1,116 @@
+margin
+                <html>
+                <head>
+                    <style>
+                        p {
+                            background-color: orange;
+                            /* margin: 20px 50px 30px 20px; */
+                            /* margin: 20px 40px 20px; */
+                            /* margin: 20px 20px; */
+                            /* margin: 30px; */
+                            margin-top: 30px;
+                        }
+                </style> 
+                </head>
+                <body>
+                    <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                </body>
+            </html>
+padding
+    padding: top right bottom left;
+    padding: top right-left bottom;
+    padding: top-bottom right-left;
+    padding: all;
+    :padding-top
+    :padding-right
+    :padding-bottom
+    :padding-left
+
+    EG:
+                <html>
+                    <head>
+                        <style>
+                            p {
+                                background-color: orange;
+                                /*padding: 10px 20px 20px 10px;*/
+                                /* padding: 10px 20px 30px; */
+                                /* padding: 20px 10px; */
+                                /* padding: 20px; */
+                                /* padding-top: 20px; */
+                                /* padding-bottom: 20px; */
+
+                            }
+                    </style> 
+                    </head>
+                    <body>
+                        <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                        <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                    </body>
+                </html>
+display:    
+1) block:
+    -> Full Width by default
+    -> Each starts with a new line
+    -> Width & height can be set 
+    -> div, p, h1, ul, footer, header.
+        EG:
+                            <html>
+                                <head>
+                                    <style>
+                                        p {
+                                            background-color: orange;
+                                            width: 500px;
+                                        }
+                                </style> 
+                                </head>
+                                <body>
+                                    <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                                    <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                                    <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                                    <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                                </body>
+                            </html>
+2) inline:
+    -> side by side
+    -> takes spaces as much as needed
+    -> Width & height can't be set
+    -> a, span, img, button
+3) inline-block
+    ->  you can able to set the widht and height
+    ->  side by side
+
+                                <html>
+                                    <head>
+                                        <style>
+                                            p {
+                                                background-color: orange;
+                                                width: 600px;
+                                                height: 100px;
+                                                display: inline-block;
+                                            }
+                                            span {
+                                                width: 100px;
+                                                height: 200px;
+                                                background-color: aqua;
+                                                display: block;
+                                            }
+                                    </style> 
+                                    </head>
+                                    <body>
+                                        <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                                        <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                                        <p>Lorem Ipsum has been the industry's standard dummy to</p>
+                                        <p>Lorem Ipsum has been the industry's standard dummy text ever si</p>
+                                <!-- 
+                                        <span>Lorem Ipsum has been the</span>
+                                        <span>Lorem Ipsum has been the sdfsdfsdf</span>
+                                        <span>sadasd  Lorem Ipsum has been the</span>
+                                        <span>Lorem Ipsum has been the</span> -->
+                                    </body>
+                                </html>
+================================================================================

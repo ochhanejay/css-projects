@@ -215,7 +215,10 @@ Class Selector:
 =======================================================
 Git download
     :   https://git-scm.com/downloads
-git clone https://github.com/ochhanejay/css-projects.git
+-> create a git repository -> name: ui-projects
+-> copy the repo link
+-> git clone <repo link>
+Eg: git clone https://github.com/ochhanejay/css-projects.git
     
     :   do your changes
 

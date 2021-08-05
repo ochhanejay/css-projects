@@ -1,0 +1,43 @@
+
+/*
+    order: link, visited, hover, active 
+*/
+/*
+a:link {
+    color: green;
+}
+
+a:visited{
+    color: orange;
+}
+
+a:hover{
+    color: red;;
+}
+
+a:active{
+    color: orchid;
+}
+*/
+a {
+    margin: 10px;
+    width: 500px;
+    display: inline-block;
+}
+a:link, a:visited {
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    /* text-align: center; */
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: black;
+    color: grey;
+}
+
+a:active{
+    background-color: red;
+}
