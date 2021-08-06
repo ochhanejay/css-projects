@@ -1,0 +1,11 @@
+Add Icons:
+    1) Go to this website:
+        https://fontawesome.com/v5.15/icons/user?style=solid
+    2) Copy the link of the icon in your html
+        <li><i class="fas fa-user"></i></li>
+    3) Add the CDN to your html
+        search google:  fontawesome cdn link
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+Intra document navigation.
+    

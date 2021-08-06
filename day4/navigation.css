@@ -1,0 +1,26 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #64C9CF;
+    overflow: hidden;
+}
+li {
+    float: left;
+}
+li > a {
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #DF711B;
+}
+.hover-effect-bg:hover{
+    background-color: #FFB740;
+}
+.righty {
+    float: right
+}
+
+.home{
+    background-color: #FDE49C;
+}
