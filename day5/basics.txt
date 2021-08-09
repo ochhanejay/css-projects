@@ -1,0 +1,95 @@
+div
+span
+header -> section -> footer
+dl -> dt -> dd ->
+menu
+
+Div:
+Eg1:
+                    <html>
+                        <head>
+                            <style>
+                                .centered{
+                                    text-align: center;
+                                    color: green;
+                                    
+                                    
+                                }
+                                .centered h1 {
+                                    border: 2px solid grey;
+                                    background-color: hotpink;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                        <div class="centered"> 
+                                <h1>Heading 1</h1>
+                                <h2>Heading 1</h2>
+                                <h3>Heading 1</h3>
+                            </div>
+                        </body> 
+                    </html>
+
+Eg2:
+<html>
+                <head>
+                        <style>
+                            body{
+                                margin: 0;
+                                padding: 0;
+                            }
+                            .top-left{
+                                margin: 0;
+                                background-color: hotpink;
+                                width: 50%;
+                                height: 50%;
+                                display: inline-block;
+                            }
+                            .top-right{
+                                margin: 0;
+                                background-color: indianred;
+                                width: 49%;
+                                height: 50%;
+                                display: inline-block;
+                            }
+                            .bottom-left{
+                                margin: 0;
+                                background-color: grey;
+                                width: 50%;
+                                height: 50%;
+                                display: inline-block;
+                            }
+                            .bottom-right{
+                                margin: 0;
+                                background-color: khaki;
+                                width: 49%;
+                                height: 50%;
+                                display: inline-block;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="top-left">  </div>
+                        <div class="top-right">  </div>
+                        <div class="bottom-left">  </div>
+                        <div class="bottom-right">  </div>
+                    </body> 
+                </html>
+
+
+
+
+dl -> dt -> dd
+            <!DOCTYPE html>
+            <html>
+            <body>
+
+            <dl>
+            <dt>Coffee</dt>
+            <dd>Black hot drink</dd>
+            <dt>Milk</dt>
+            <dd>White cold drink</dd>
+            </dl>
+
+            </body>
+            </html>
