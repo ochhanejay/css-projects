@@ -1,0 +1,134 @@
+https://nicepage.com/ht/536788/healthy-organic-food-html-template
+
+Winrar
+=========================================================
+-----------------------------------------------------------------------------
+ -  CSS selectors are further classified into various groups based on their behaviour
+        ->   Combinator / Rational selectors
+        ->   Attribute Selector
+        ->   Psuedo selectors
+        ->   Structural Psuedo selectors.
+
+->   Attribute Selector
+        -->  Several HTML elements are presented using attribute of a tag. Hence we have to apply effects for a tag and its attribute.
+    Syntax:
+        tagName[attributesName=value] {}
+
+        tagName[attributesName="value"] {}
+
+        =value 			-		it will match with that particular value
+        Eg:
+                    <html>
+                        <head>
+                            <title>Attribute Selector</title>
+                            <style>
+                                input[type=password] {
+                                    background-color: orange;
+                                }
+                                input[type=button] {
+                                    padding: 2px 10px;
+                                    background-color: green;
+                                    color: white;
+                                }
+                                input[type=submit] {
+                                    padding: 0px 20px;
+                                    width: 300px;
+                                    background-color: orange;
+                                    border: 2px solid black;
+                                    border-radius: 12px;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <form>
+                                <label>Name</label>
+                                <input type="text">
+                                <label>Password</label>
+                                <input type="password">
+                                <input type="button" value="login">
+                                <input type="button" value="signup">
+                                <input type="submit">     
+                            </form>
+                        </body>
+                    </html>
+
+    Syntax:
+        
+        tagName[attributesName] {}
+
+        Eg:
+                                    <html>
+                            <head>
+                                <title>Attribute Selector</title>
+                                <style>
+                                    p[id] {
+                                        color: red;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <p>Hello</p>
+                                <p id="werwee">Hello</p>
+                                <p id="erwer">Hello</p>
+                                <p>Hello</p>
+                            </body>
+                        </html>
+
+    Syntax:
+        ^=value			            -			starting with
+        [attribute^="value"]        -           It refers the value starting with specified term.
+                                <html>
+                                    <head>
+                                        <title>Attribute Selector</title>
+                                        <style>
+                                            p[class^="Effect"] {
+                                                color: green;
+                                            }
+                                        </style>
+                                        
+                                    </head>
+                                    <body>
+                                        <p class="paraEffect">Para-1</p>
+                                        <p class="para Effect">Para-2</p>
+                                        <p class="Effectpara">Para-3</p>
+                                        <p class="Effect">Para-4</p>
+                                    </body>
+                                </html>
+
+    Syntax:
+        $=value             -               ending with
+
+                            <style>
+                                p[class$="Effect"] {
+                                    color: green;
+                                }
+                            </style>
+                            
+
+
+
+    Syntax:
+        *=value             -       It matches at any place.
+
+                                    <style>
+                                        p[class*="Effect"] {
+                                            color: red;
+                                        }
+                                    </style>
+
+    Syntax:
+        |=value	            	only meant for hyphen
+                                Name start with specified term and seperated by hyphen ["-"]
+    Syntax:
+    ~=value				-		odemtofy the spaces	
+
+
+
+
+->   Psuedo selectors
+
+        ->  link
+        ->  visited
+        ->  hover
+        ->  active
+        ->  focus
