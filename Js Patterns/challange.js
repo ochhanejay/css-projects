@@ -15,11 +15,12 @@ https://www.tutorialstonight.com/js/javascript-alphabet-pattern.php
 
 21.Write a C program to print Pascal triangle:
 
-   1
-  1 1
- 1 2 1
-1 3 3 1
-
+        1
+       1 1
+      1 2 1
+     1 3 3 1
+    1 4 4 4 1
+    
 22.Write a C program to print following character triangle
 A
 BB

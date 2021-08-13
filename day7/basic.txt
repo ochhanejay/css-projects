@@ -1,0 +1,84 @@
+The UI element states Psuedo-classes
+
+Selector                                Description
+
+:enabled                                It defines effects when element is enabled
+:disable                                It defines effects when element is disabled
+:read-only                              It defines effects when element is configured with read-only property        
+:checked                                It defines effects on checked status of radio and checkbox
+
+eg - 3:
+                                <html>
+                                <head>
+                                    <title>States</title>
+                                    <style>
+                                        input:disabled {
+                                            background-color: grey;
+                                            color: white;
+                                            cursor: not-allowed;
+                                        }
+                                        input[type=submit]:enabled {
+                                            background-color: green;
+                                            color: white;
+                                            cursor: grab;   
+                                        }
+                                        input:read-only {
+                                            cursor: not-allowed;
+                                        }
+                                    </style>
+                                </head>
+                                <body>
+                                    <form>
+                                        <label>Name</label>
+                                        <input readonly value="john123" type="text">
+                                        <label>Password</label>
+                                        <input type="password">
+                                        <input disabled type="submit">
+                                    </form>
+                                </body>
+                            </html>
+
+
+:checked
+
+                                        <html>
+                                    <head>
+                                        <title>States</title>
+                                        <style>
+                                            .note{
+                                                width: 500px;
+                                                height: 200px;
+                                                background-color: grey;
+                                                overflow: scroll;
+                                            }
+                                            input[type=checkbox]+span{
+                                                color: red;
+                                            }
+                                            input[type=checkbox]:checked+span{
+                                                color: green;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <fieldset>
+                                            <legend>Terms & Conditions</legend>
+                                            <div class="note">
+                                                <p><span>Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                            </div>
+                                            <input type="checkbox"><span>I Accept</span>
+                                        </fieldset>        
+                                    </body>
+                                </html>
+
+
+
+overflow:
+
+UI elemement validation state pseudo classes
+
+: valid
+: invalid
+: required
+: optional
+: in-range
+: out-of-range
