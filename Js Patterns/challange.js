@@ -20,7 +20,7 @@ https://www.tutorialstonight.com/js/javascript-alphabet-pattern.php
       1 2 1
      1 3 3 1
     1 4 4 4 1
-    
+
 22.Write a C program to print following character triangle
 A
 BB
@@ -41,10 +41,10 @@ D DDD
    A B C D E D C B A
 
 24  Write a C program to print following character triangle:
-   A B C D E D C B A
-     B C D E D C B
-       C D E D C
-         D E D
+   A B C D E   D C B A
+     B C D E   D C B
+       C D E   D C
+         D E   D
            E
 
 _______________________________________________________________________
@@ -59,3 +59,12 @@ _______________________________________________________________________
            3 3 3
            2 2
            1
+
+26.
+              1
+            1    1
+          1   1   3
+        1   1   3   1
+      1   1   3   1   5 
+    1   1   3   1   5   6  
+  1   1   3   1   5   6   7  

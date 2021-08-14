@@ -82,3 +82,5 @@ UI elemement validation state pseudo classes
 : optional
 : in-range
 : out-of-range
+
+https://nicepage.com/ht/121618/quality-medical-care-html-template
