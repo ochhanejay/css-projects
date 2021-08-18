@@ -1,0 +1,11 @@
+            CSS Box Model
+
+- Everythin in CSS has a box around it.
+- Undestanding boxes is important to design proper layout in CSS.
+- The box model comprises of:  
+    - Content Box: The area where you content is displayed. It can be defined by using proeprties like width & height.
+    - Padidng Box: The padding is around the content a white space.Its size can be controlled by using "padding" proeprty.
+    - Border Box: The border box wraps around the content or padding. "border".
+    - Margin Box: The margin is the outmost layer wrapping the content, padding and border. 
+                    It configures the white space around the border. "margin".
+    
