@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Display</title>
+        <style>
+            body{
+                width: 90%;
+                max-width: 1000px;
+                margin: 2em auto;
+                font: 1em Arial;
+            }
+            header, footer {
+                border: 2px solid darkcyan;
+                background-color: lightcyan;
+                text-align: center;
+                border-radius: 10px;
+            }
+            .container {
+                display: grid;
+                /* grid-template-columns: 200px 800px; */
+                /* grid-template-columns: 2fr 2fr 3fr; */
+                grid-template-columns: 1fr 4fr;
+                grid-gap: 10px;
+
+            }
+            header{
+                grid-row: 1;
+                grid-column: 2 / 2;
+            }
+            footer {
+                grid-row: 3;
+                grid-column-start: 2;
+                grid-column-end: 2;
+            }
+            aside {
+                grid-row: 2;
+                grid-column: 1;
+                border-right: 2px dotted darkcyan;
+            }
+            article {
+                grid-row: 2;
+                grid-column: 2;
+            }
+            .leftHeader {
+                grid-row: 1;
+                grid-column: 1;
+                border: 1px solid darkcyan;
+                text-align: center;
+                border-radius: 5px;
+            }
+            .leftFooter {
+                grid-row: 3;
+                grid-column: 1;
+                border: 1px solid darkcyan;
+                text-align: center;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <header>Amazon Shopping Online</header>
+        <article>
+            <h2>Amazon Home</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam sed delectus ut rem doloremque aliquid fuga, dolore obcaecati ad eaque veniam, officiis ullam, odio quis harum voluptates reiciendis! Facere natus debitis non pariatur eius quas laborum eos fugit sapiente sit officia rerum quod beatae quibusdam a, neque ipsa itaque et repellendus labore voluptas voluptates. In enim impedit distinctio hic fugiat sapiente dolore repellendus tenetur illo, labore quis eos praesentium consequuntur aperiam ullam voluptatibus, veniam deleniti iusto! Deserunt ad amet, hic, recusandae quidem repudiandae nihil harum quas ipsam expedita omnis quia temporibus. Dignissimos magnam voluptas maiores ipsam vero est, harum sapiente.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam eaque qui repudiandae quidem? Animi ipsam, dolor dolore expedita explicabo consequatur blanditiis vitae? Distinctio magni eum veniam tempore modi nulla quos totam quam. Impedit ipsam aliquid, similique facere sit labore? Delectus ab autem totam temporibus voluptatem aliquam ipsum explicabo debitis itaque sint eius quo possimus libero assumenda dolorem, a incidunt doloribus aspernatur ut voluptates animi quia numquam obcaecati. Eligendi assumenda velit ab commodi aspernatur ipsum nulla eaque molestiae qui! Commodi porro iure explicabo quaerat ullam sint, eligendi similique ex velit nihil nisi voluptatem vero quis voluptatum dolor distinctio nemo corporis.</p>
+        </article>
+        <aside>
+            <h2>Shopping categories</h2>
+            <ul>
+                <li>Fashion</li>
+                <li>Electronics</li>
+                <li>Footwear</li>
+            </ul>
+        </aside>
+        <footer>
+            &copy; copyright 2020 Amazon
+        </footer>
+        <div class="leftHeader">
+            Logo here..
+        </div>
+        <div class="leftFooter">
+            Site map..
+        </div>
+    </div>
+    </body>
+</html>

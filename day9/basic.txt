@@ -1,0 +1,26 @@
+                            CSS Display
+
+-   The display CSS property is used to configure the display style of any element, inline, flex, grid, etc
+
+Syntax:
+    element {
+        display: value;
+    }
+==================================================================
+value                              -                            Description
+inline                             -    It will display content beside exisiting
+block                              -    It will display content in new line
+grid                               -    It can display content in rows and columns
+flex        
+none
+table
+initial
+inherit
+===================================================================
+                    Display - grid
+-
+    Attribute                                   Description
+grid-template-columns                           The number of columns in grid and the column width.
+grid-gap                                        The space between columns.
+grid-column                                     It specifies in which column the content should display
+grid-row                                        It specifies in which row the content should display
