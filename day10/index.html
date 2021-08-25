@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>GRID Example</title>
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: 3fr 3fr 3fr 3fr;
+                grid-gap: 20px;
+            }
+            header {
+                grid-row: 1;
+                grid-column: 1/5;
+            } 
+            header div{
+                display: inline;
+            }
+            ul {
+                list-style: none;
+            }
+            footer {
+                grid-row: 3;
+                grid-column: 1/5;
+            }
+            /* footer div{
+                display: inline;
+            } */
+            footer {
+                display: grid;
+                grid-template-columns: 3fr 3fr 3fr 3fr;
+                background-color: black;
+                color: white;
+            }
+            footer aside {
+                grid-row: 1;
+                grid-column: 1/5;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <header>
+                <div>
+                    <img src="Images/logo.png">
+                </div>
+                <div>
+                    Saturday, Aug 29, 2020 
+                    <span>|</span>
+                    New Delhi 28 <sup>0</sup>C 
+                    <span>|</span> 
+                    e-paper
+                </div>
+            </header>
+            <article>
+                <h3><button style="background-color:brown">&nbsp;</button> Sports News </h3>
+                <img src="Images/n1.jpg">
+                <div>
+                    IPL 2020 | CSK’s Suresh Raina pulls out of tournament due to personal reasons
+                    <div >
+                        Aug 29, 2020 12:30 IST
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3><button style="background-color:brown">&nbsp;</button> Sports News </h3>
+                <img src="Images/n2.jpg">
+                <div>
+                    IPL 2020 | CSK’s Suresh Raina pulls out of tournament due to personal reasons
+                    <div >
+                        Aug 29, 2020 12:30 IST
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3><button style="background-color:brown">&nbsp;</button> Sports News </h3>
+                <img src="Images/n3.webp">
+                <div>
+                    IPL 2020 | CSK’s Suresh Raina pulls out of tournament due to personal reasons
+                    <div >
+                        Aug 29, 2020 12:30 IST
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3><button style="background-color:brown">&nbsp;</button> Sports News </h3>
+                <img src="Images/n4.jpg">
+                <div>
+                    IPL 2020 | CSK’s Suresh Raina pulls out of tournament due to personal reasons
+                    <div >
+                        Aug 29, 2020 12:30 IST
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <aside>
+                    <img src="Images/logo.png" width="200" height="20">
+                </aside>
+                <div>
+                    <ul>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                        <li>India news</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
