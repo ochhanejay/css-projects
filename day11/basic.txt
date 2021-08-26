@@ -1,0 +1,28 @@
+                CSS Positions
+-   The position CSS property sets hows an elemment is positioned in a document. The top, right, bottom and left properties
+    determine the final location positioned.
+-   Positions can be defined with following values
+
+1) static
+    -   The elemments are positioned according to the normal flow of the document.
+        The top, right, bottom and left and z-index properties have no effects.
+        It is the default value.
+
+2) relative
+    -   The elemments are positioned according to the normal flow of the document.
+        and then offset relative to itself based on the values of top, right, bottom and left.
+        It is relative to the existing elemments.
+
+3) absolute
+    -   The elemment is removed from normal document flow, and no space is created from 
+        the elemment in the page layout. It is placed relative to the parent elemment and effected
+        by tip, right, bottom and left values.
+
+4) fixed
+    -   The elemment is removed from normal document flow. Is is positioned at a fixed 
+        location based on left, right, top and bottom values. It will not move with regards 
+        to relative elemments.
+
+5) sticky
+    -   It is positioned according to the normal document flow.It will have scrolling relative to 
+        the parent up to specified units and then lock scrolling. 
