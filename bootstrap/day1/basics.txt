@@ -1,0 +1,145 @@
+                                Bootstrap
+
+-   Bootstrap is one of the worlds largest repository of HTML, CSS and JavaScript.
+-   Repository is a library with templates.
+-   Template is a predefined design, which you can customize and implement according to your requirement.
+-   Bootstrap is learning about the classes and attributes, which have pre-defined functionality.
+-   Free and open source.
+===========================================================================================
+                        How to install Bootstrap
+
+Their are three ways to install Bootstrap.
+
+1)  Download the zip file and extract it into your project.
+2)  Use the given CDN links.
+3)  Install it through Node.
+            Download node:  https://nodejs.org/en/download/
+            Version:        node -v
+        1)  Go to your project in VS-code
+        2)  Open the Terminal
+        3)  npm install bootstrap    
+
+    -   The packages that you install can be used only with in the current project.
+    -   You have to install the library individualy for every project.
+
+Bootstrap file hierarchy.
+==============================
+
+Bootstrap for UI development initially requires the following files.
+
+CSS Files: [bootstrap ->   dist ->  css]
+    -bootstrap.css      -   development      [Core Bootstrap CSS]
+    -bootstrap.min.css  -   production
+
+    -bootstrap.grid.css     [for grid system]
+    -bootstrap.reboot.css   [reboot system]
+
+JavaScript Files: [bootstrap -> dist    ->  js]
+    -bootstrap.js           [Core]
+    -bootstrap.bundle.js    [All included]
+===========================================================================
+                How to use bootstrap
+Eg: index.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+     <title>Bootstrap Usecase</title>
+</head>
+<body class="container">
+    <h2>Bootstrap Demo</h2>
+    <button class="btn btn-primary">Submit</button>
+</body>
+</html>
+
+===========================================================================
+                        Bootstrap Containers
+-   Container is used for basic layout.
+-   Container sets width and height with margin and padding
+-   Bootstrap provides 3 different Containers   
+
+        1)  .container          -   sets max-width
+        2)  .container-fluid    -   set width 100%
+        3)  .container-{breakpoint}
+    
+    Class                               Screen
+                                        <576px
+    .container                          100%
+    .container-sm                       100%
+    .container-md                       100%
+    .container-lg                       100%
+    .container-xl                       100%
+    .container-fluid                    100%
+
+    small           -   sm is used if Screen >= 576px
+    medium          -   md is used if Screen >= 768px
+    large           -   lg is used if Screen >= 992px
+    extra large     -   xl ia used if Screen >= 1200px
+    .container-fluid-   sets 100% for every Screen.
+
+Eg:
+container.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>container example</title>
+    <style>
+        .container-fluid {
+            padding-left: 30px;
+            padding-right: 20px;
+        }
+        .body-container {
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body class="container-fluid text-justify body-container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in officiis perspiciatis quos nam eos assumenda labore eligendi eaque sapiente. Et, culpa! Veritatis, ipsam. Quisquam quod nisi, minima dolore dicta sequi laudantium sunt odit perferendis ratione placeat cupiditate quaerat, enim hic, deleniti ducimus eveniet doloribus soluta rem illo. Neque officiis numquam impedit architecto totam quod iure dignissimos, optio animi explicabo repudiandae inventore tempore quidem. Similique ducimus delectus optio natus dolorum obcaecati eaque amet consequatur assumenda, distinctio nihil dicta unde repellendus tempore inventore exercitationem vero, ut consectetur praesentium magnam fugit fugiat excepturi at sunt. Ea iusto corporis nulla, soluta vero minima consectetur illum quasi praesentium reiciendis! Atque, officiis quia. Quis cupiditate, exercitationem fugit quaerat quam ut expedita omnis dolorum pariatur alias eius cum, maxime reiciendis iure perspiciatis? Nostrum harum possimus quisquam nemo. Reiciendis commodi eligendi quam quaerat voluptatibus porro numquam molestias nemo eaque. Animi quasi autem ipsa explicabo impedit vel vitae earum nemo sunt error? Amet mollitia fugiat, repellat molestiae voluptatibus at voluptatum rem cum nisi natus laudantium totam nesciunt corporis odio illo aliquid! Itaque, deleniti autem obcaecati doloremque molestiae natus laudantium doloribus debitis labore? Delectus iure aspernatur ipsa accusamus non veniam dolores aliquid impedit praesentium voluptatibus, quas numquam doloremque ducimus.</p>
+</body>
+</html>
+==================================================================================
+                        Bootstrap Contextual Colors
+
+Background Colors:
+    .bg-primary
+    .bg-secondary
+    .bg-success
+    .bg-danger
+    .bg-warning
+    .bg-info
+    .bg-dark
+    .bg-light
+Text Colors:
+    .text-primary
+    .text-secondary etc.....
+    .text-white
+
+Colors.html
+eg:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Bootstrap Colors</title>
+</head>
+<body class="container-fluid">
+    <div class="text-white">
+        <div class="bg-primary">Primary</div>
+        <div class="bg-secondary">Secondary</div>
+        <div class="bg-success">Success</div>
+        <div class="bg-danger">Danger</div>
+        <div class="bg-warning">Warning</div>
+        <div class="bg-info">Info</div>
+        <div class="bg-dark">Dark</div>
+        <div class="bg-light">Light</div>
+    </div>
+</body>
+</html>
