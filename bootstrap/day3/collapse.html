@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Collapse</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body class="container-fluid">
+    <div>
+        <dl>
+            <dt>Name</dt>
+            <dd>JBL Speakers</dd>
+            <dd>
+                <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#previewProduct">Preview</button>
+                <a href="#previewProduct" data-bs-toggle="collapse">View Product</a>
+            </dd>
+        </dl>
+    </div>
+    <div class="collapse" id="previewProduct">
+        <img src="images/add1.jpg" width="200" height="200">
+        <br>
+        <i><b>&#8377; 5000</b></i>
+    </div>
+</body>
+</html>

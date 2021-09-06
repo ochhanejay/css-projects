@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+    <div id="slidingBanners"class="carousel slide" data-bs-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="1"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/bootstrap/day3/images/add2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slidingBanners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slidingBanners" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</body>
+</html>

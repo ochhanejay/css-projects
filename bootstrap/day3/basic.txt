@@ -1,0 +1,234 @@
+Bootstrap Carousel
+
+-   It is used to design changing and slide transition.
+-   It uses JQuery plugin for transition and animation.
+
+Basic classes.
+    .carousel:          It defines carousel with "inner"
+    .carousel-inner:    Contains collection of items
+    .carousel-item :    Contains slides
+    .slide
+    .carousel-fade
+    .active:    It specifies which slide to start with
+Plugin:
+    data-bs-ride: It is used to start animation
+
+banner:
+    1487 * 370  :   width - height    
+
+Eg:
+===========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+    <div class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+===========================================
+                Carousel Controls
+-   Allow navigation to previous and next slides.
+classes:
+    .carousel-control-prev
+    .carousel-control-next
+    .carousel-control-prev-icon
+    .carousel-control-next-icon
+
+Note:   All carousel Controls must be inside "carousel" 
+        navigationis defined by using <a> element.
+    
+JQuery Plugin:
+    data-bs-slide:  It specifies slide to previous or next
+    data-bs-target:
+
+Eg:
+====================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+    <div id="slidingBanners"class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <!-- <a class="carousel-control-prev" data-bs-slide="prev" href="#slidingBanners">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" data-bs-slide="next" href="#slidingBanners">
+            <span class="carousel-control-next-icon"></span>
+        </a> -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#slidingBanners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slidingBanners" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</body>
+</html>
+================================================================
+                        Carousel with indicators
+
+-   indicators Allow to navifate to any specific slide
+
+classes:
+    .carousel-indicators    : it is a collection of indicators
+                                        <ol> or <ul>
+Plugin:
+    data-bs-target: it indicate carousel "id"
+    data-bs-slide-to: It specifies slide number to navigate starting with 0
+
+Note:   indicators a defined above the "carousel-inner"
+
+Eg:
+===========================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+    <div id="slidingBanners"class="carousel slide" data-bs-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="1"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slidingBanners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slidingBanners" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</body>
+</html>
+=================================================================================
+                Time interval for slide
+-   You can control the time interval between slides by using the plugin "data-bs-interval"
+-   Every slide can have different time intervals.
+Eg: data-bs-interval="milliseconds"
+    data-bs-interval="1000"
+
+====================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</head>
+<body>
+    <div id="slidingBanners"class="carousel slide" data-bs-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="1"></li>
+            <li data-bs-target="#slidingBanners" data-bs-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slidingBanners" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/bootstrap/day3/images/add2.jpeg" class="d-block w-100">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
+                <img src="/bootstrap/day3/images/add1.jpg" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slidingBanners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slidingBanners" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</body>
+</html>
+============================================================
+
+                                Bootstrap collapse
+
+-   It is used for showing or hiding any content on page.
+-   Dynamically you can show or hide.
+
+classes
+    .collapse       -   hides content
+    .collapsing     -   is applied during transition
+    .collapse.show  -   shows content
+
+plugin:
+    data-bs-target: specifies the id of container to collapse
+    data-bs-toggle: To collapse and open container
+
+data-bs-target: specifies the id of container to collapse is requried for button Controls.
+                if you are using <a> element you can defined by using "href"
+
+=============================================================================
+
+                    Bootstrap Accordion
+
+- It is a collection of cards which you can switch between display Dynamically. 
+    It uses collapse and card with Accordion.
+
+classes
+    .accordion
