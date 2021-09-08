@@ -1,0 +1,56 @@
+                Nav
+    
+Classes
+    .nav
+    .nav-item
+    .nav-tabs
+    .nav-pills
+    .nav-pills nav-fill
+
+            Bootstrap Tab content
+        
+-   Tab content is used with combination of tabs
+-   Classes
+        .tab-content
+        .tab-pane
+        .show           ->  display
+        .active         ->  to defined active tab
+-   JQuery Plugins
+
+        data-bs-toggle="tab"
+
+==============================================================================
+                        Bootstrap Nav-Bar
+
+-   It is used for main navigation for website.
+Classes
+    .navbar
+    .navbar-expand-lg, sm
+    .navbar-dark, light
+    .navbar-brand
+    .navbar-toggler
+    .navbar-toggler-icon
+    .navbar-nav
+JQuery Plugins
+    data-bs-toggle
+    data-bs-target
+
+    
+============================================================================
+                    Bootstrap Grids
+                
+.row
+.col
+.col-sm-1 to col-sm-12
+
+=========================================================================== 
+                    tables
+
+.table
+.table-hover
+.table-bordered
+.table-responsive
+.table-primary, dark, danger
+.table-dark, table-light
+.table-borderless
+.table-sm
