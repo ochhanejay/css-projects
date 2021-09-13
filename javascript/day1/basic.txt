@@ -13,9 +13,10 @@
     Database        with        MongoDB
     Animations      with        Flash
 
-                    Evulution of JavaScript
+                    Evolution of JavaScript
 
-- Internet started with a browser called "Mosaic" and  scripting language called "ECMA Script"
+- Internet started with a browser called "Mosaic" and  
+    scripting language called "ECMA Script"
     [Europen Computer Manufactures association]
 -   GML & SGML
 -   1990 Tim Berners Lee introduced Web & HTML
@@ -112,6 +113,23 @@ B) Embeded: In this method the JavaScript functions are defined within the page
 </body>
 </html>
 ===============================================================
-C) External File:   extension .js
-
-
+C) External File:   extension print.js
+print.js
+function Printing(){
+    window.print();
+}
+===
+index.html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript </title>
+        <script src="print.js"></script>
+    </head>
+    <body>
+        <h2>Testing</h2>
+        <h2>Testing JavaScript</h2>
+        <button onclick="Printing()">Print</button>
+        <button onclick="Printing()">Print2</button>
+    </body>
+</html>
