@@ -1,0 +1,392 @@
+JavaScript MIME Type:
+
+    -   Multipurpose Internet Mail extension
+    -   It specifies the media type of file.
+    -   <script> element can be used for both server side and client side script.
+    -   JavaScript MIME type can be defined as 
+            "text/javascript"
+                (or)
+            language = "javascript"
+    -   <script src="print.js" type="text/javascript"></script>
+                        (or)
+        <script src="print.js" language="JavaScript">
+    
+======================================================================
+
+JavaScript Strict Mode:
+
+    -   Every programming language have specific coding standards to follow.
+    -   JavaScript follows ECMAScript standards
+    -   Developers may voilate the coding rules while writing the code.
+    -   Strict mode will not allow the code that is not according to standards.
+    -   You can turn on JavaScript strict mode by using "use strict"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        "use strict"
+        function f2() {
+            var x = 10;
+            document.write("x= "+x);
+        }
+        f2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+====================================================================
+How JavaScript can refer HTML elements?
+
+1)    - JavaScript can refer HTML elements by using DOM hierarchy.
+    
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            window.document.images[0].src="top.png";
+            window.document.forms[0].elements[2].value="Submit";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div>
+        <img width="100" height="100" style="border: 1">
+    </div>
+    <div>
+        <form>
+            Name:
+            <input type="text">
+            Password:
+            <input type="text">
+            <input type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+2-  JavaScript can refer HTML elements by using their reference name. 
+    [Every HTML element can have a name]
+
+    -   You can't directly access a child element without refering to parent element.
+    -   Name can be common for may elements.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            pic.src="top.png";
+            frmHome.btnSubmit.value = "Submit";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div>
+        <img name="pic" width="100" height="100" style="border: 1">
+    </div>
+    <div>
+        <form name="frmHome">
+            Name:
+            <input name="txtName" type="text">
+            <input name="btnSubmit" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+3-  JavaScript can refer HTML elements by using their ID.
+
+    -   Id allows to access directly any element without following parent and child
+        hierarchy.
+    -   Id is unique for elements.
+    -   You can access by usign the function.
+
+        "document.getElementById()"
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            document.getElementById("pic").src="top.png";
+            document.getElementById("btnSubmit").value="Submit";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div>
+        <img id="pic" name="pic" width="100" height="100" style="border: 1">
+    </div>
+    <div>
+        <form name="frmHome">
+            Name:
+            <input id="txtName" name="txtName" type="text">
+            <input id="btnSubmit" name="btnSubmit" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+4.  JavaScript can refer HTML elements by using their tag name.
+
+    "document.getElementByTagName()"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            var x = document.getElementsByTagName("div");
+            alert("Total no of div's= "+x.length);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div>
+        <img id="pic" name="pic" width="100" height="100" style="border: 1">
+    </div>
+    <div>
+        <form name="frmHome">
+            Name:
+            <input id="txtName" name="txtName" type="text">
+            <input id="btnSubmit" name="btnSubmit" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+5.  JavaScript can refer HTML elementsby using their class name.
+
+    "document.getElementByClassName()"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            var x = document.getElementsByClassName("form-group")
+            alert("Total no of form group = "+x.length);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div class="form-group">
+        <img id="pic" name="pic" width="100" height="100" style="border: 1">
+    </div>
+    <div class="form-group">
+        <form name="frmHome">
+            Name:
+            <input id="txtName" name="txtName" type="text">
+            <input id="btnSubmit" name="btnSubmit" type="button">
+        </form>
+    </div>
+</body>
+</html>
+
+6. access elements that are using common name
+
+    "document.getElementsByName"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function bodyload() {
+            var x = document.getElementsByName("pay")
+            alert("Total no of payment method = "+x.length);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>HTML and JavaScript</h2>
+    <div class="form-group">
+        <img id="pic" name="pic" width="100" height="100" style="border: 1">
+    </div>
+    <div class="form-group">
+        <form name="frmHome">
+            Name:
+            <input id="txtName" name="txtName" type="text">
+            <input id="btnSubmit" name="btnSubmit" type="button">
+        </form>
+    </div>
+    <fieldset>
+        <legend>Payment Methods</legend>
+        <input type="radio" name="pay"> Credit Card
+        <input type="radio" name="pay"> COD
+        <input type="radio" name="pay"> UPI
+    </fieldset>
+</body>
+</html>
+========================================================================
+========================================================================
+========================================================================
+JavaScript Output Properties and Methods.
+
+    1)  innerHTML
+    2)  innetText
+    3)  outerHTML
+    4)  alert()
+    5)  confirm()
+    6)  console.log(), warn(), error(), info(), debug()
+
+============================================================
+                alert()
+    
+    -   Alert is a message box used to display a message dynamically in the browser windows.
+    -   It will not allow the user to perform any another task until or unless
+        he confirms the alert
+    -   User can't event cancel it. It is a mandatory to confirm.
+
+        esc    =    ok 
+        enter  =    ok
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function DeleteClick() {
+            alert("Record will be delete permanenly");
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Delete Record</h2>
+    <button onclick="DeleteClick()" type="button"> Delete</button>
+</body>
+</html>
+
+======================
+                    confirm()
+
+    -   Confirm is simillar to alert but allows to cancel.
+    -   User can continue with YES or can cancel.
+
+        ok      =   true
+        cancel  =   false
+        esc     =   false
+        enter   =   true
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function DeleteClick() {
+            var x = confirm("Are you sure, you want to delete");
+            if(x == true) {
+                alert("Record Deleted")
+            } else {
+                alert("Action Canceled..")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Delete Record</h2>
+    <button onclick="DeleteClick()" type="button"> Delete</button>
+</body>
+</html>
+========================================================================
+                            innerHTML & innerText
+                        
+    -   These are the output Properties used to display message inside any
+        container element of HTML which can be display text.
+    -   which can display text
+        <div> <span> <p> <blockquote> <h1> <dd> <td> <th> <dt> <li> etc...
+    -   innerHTML can display a message with HTML formats i.e. iw will allow
+        tags to format message.
+    -   innerText can display a message without any formats. It will not allow any tags
+        in the message. 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function DeleteClick() {
+            var x = confirm("Are you sure, you want to delete");
+            if(x == true) {
+                document.getElementById("msg").innerHTML="<b>Record Deleted Successfully</b>";
+            } else {
+                document.getElementById("msg").innerText="<b>Action Canceled</b>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Delete Record</h2>
+    <button onclick="DeleteClick()" type="button"> Delete</button>
+    <div>
+        <h2 id="msg"></h2>
+    </div>
+</body>
+</html>
+=========================================================================
+                        outerHTML
+                    
+    -   It allows to chagne complete element dynamically including start and enabled  tags.
+        It generates output can replace complete element.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function DeleteClick() {
+            var x = confirm("Are you sure, you want to delete");
+            if(x == true) {
+                document.getElementById("msg").innerHTML="<b>Record Deleted Successfully</b>";
+            } else {
+                document.getElementById("msg").outerHTML="<h3>Action Canceled</h3>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Delete Record</h2>
+    <button onclick="DeleteClick()" type="button"> Delete</button>
+    <div>
+        <h2 id="msg"></h2>
+    </div>
+</body>
+</html>
+
+=================================================================
+                    console methods
+    -   console is a toold present in browser debugger.
+    -   you can log the messages and test your values while developing or testing application.
+
+        log()
+        error()
+        debug()
+        warn()
+        info()
+=====================================================================

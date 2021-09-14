@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>    
+    <script type="text/javascript">
+        "use  strict"
+        function DeleteClick() {
+            console.info("You are inside DeleteClick funtion");
+            console.log(1+2);
+            var x = confirm("Are you sure, you want to delete");
+            
+            if(x == true) {
+                console.error("inside true block")
+                document.getElementById("msg").innerHTML="<b>Record Deleted Successfully</b>";
+            } else {
+                console.warn("inside false block")
+                document.getElementById("msg").outerHTML="<h3>Action Canceled</h3>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Delete Record</h2>
+    <button onclick="DeleteClick()" type="button"> Delete</button>
+    <div>
+        <h2 id="msg"></h2>
+    </div>
+</body>
+</html>
