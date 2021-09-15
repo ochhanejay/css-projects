@@ -251,7 +251,7 @@ JavaScript Output Properties and Methods.
     4)  alert()
     5)  confirm()
     6)  console.log(), warn(), error(), info(), debug()
-
+    7)  document.write()
 ============================================================
                 alert()
     
@@ -390,3 +390,10 @@ JavaScript Output Properties and Methods.
         warn()
         info()
 =====================================================================
+                    document.write()
+
+    It is an output function used to display the output on a new screen [not a new page]
+
+        document.write("message/expression")                
+    
+=======================================================================

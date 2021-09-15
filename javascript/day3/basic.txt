@@ -1,0 +1,239 @@
+                            Input in JavaScript
+
+    -   1)  HTML form input elements.
+    -   2)  prompt()
+    -   3)  using QueryString
+    
+-   Register / Login    ->  Server
+-   Register            ->  Next page
+
+How to access Radio button values in javascript
+How to access checkbox values in javascript //by id
+
+Ex:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bootstrap/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <title>HTML Form</title>
+    
+    <script type="text/javascript">
+        "use strict"
+        function RegisterClick() {
+            var name = document.getElementById('txtName').value;
+            var price = document.getElementById('txtPrice').value;
+            document.getElementById('lblName').innerHTML = name;
+            document.getElementById('lblPrice').innerHTML = price; 
+            // var stock = stock.value;
+            // console.log(stock);
+            var shippingCity = document.getElementById('lstShippedTo').value;           
+            document.getElementById("lblShipped").innerHTML = shippingCity;
+        }
+    </script>
+    <style>
+        .productForm {
+            width: 300px;
+            border: 2px solid darkcyan;
+            box-shadow: 2px 3px 4px darkcyan;
+            border-radius: 10px;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="productForm">
+        <!-- <form name="frmRegister">             -->
+            <div class="form-group">
+                <label>Name</label>
+                <div>
+                    <input type="text" id="txtName" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <div>
+                    <input type="text" id="txtPrice" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Is In Stock</label>
+                <div>
+                    <input type="radio" name="stock" value="Available"> Yes
+                    <input type="radio" name="stock" value="Out Of Stock"> No
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Shipped To</label>
+                <div>
+                    <select id="lstShippedTo" class="form-control">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Indore">Indore</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button onclick="RegisterClick()"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productDetailsModal">Register Product</button>
+            </div>
+        <!-- </form> -->
+    </div>
+    <div class="modal" id="productDetailsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Product Details</h3>
+                    <button type="button" class="btn-close"  data-bs-dismiss="modal" ></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td id="lblName"></td>
+                            </tr>
+                            <tr>
+                                <td>Price</td>
+                                <td id="lblPrice"></td>
+                            </tr>
+                            <tr>
+                                <td>Stock</td>
+                                <td id="lblStock"></td>
+                            </tr>
+                            <tr>
+                                <td>Shipped To</td>
+                                <td id="lblShipped"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+============================================================================
+                            JavaScript language basics
+
+1.  Variables
+2.  DataTypes
+3.  Operators
+4.  Statements
+5.  Functions
+
+
+                            Variables in JavaScript
+                            -----------------------
+
+-   Variables are storage locations in memory where you can store a value
+    and use it as a part of any expression.
+-   Variables are configured in 3 methods 
+        a)  Declaration
+        b)  Assignment / Rendering
+        c)  Initialization
+
+
+        var x;          ->      Declaration
+        x = 10;         ->      Assignment
+        var x = 10;     ->      Initialization
+
+
+
+-   JavaScript allows to render a variable without declaring. i.e Declaration is 
+    not required in javascript if it is not in strict mode.
+
+-   Variables Declaration or Initialization is mandatory when javascript is in strict mode.
+
+============================================================================
+                    JavaScript variables can be declared by using 
+                
+                1)  var
+                2)  let
+                3)  const
+
+
+-   var
+    a)  It is used to define a function scope variable.
+    b)  you can declare in any block and access from any another block within the function.
+    c)  var allows declaring, Rendering and Initialization.
+
+                                        <!DOCTYPE html>
+                                <html lang="en">
+                                <head>
+                                    <title>HTML Form</title>
+                                    
+                                    <script type="text/javascript">
+                                        "use strict"
+                                        function f1() {
+                                            var x;  // declaring
+                                            x = 10; // rendering
+                                            if(x == 10) {
+                                                var y = 20; //  initialization
+                                            }
+                                            document.write("x = " + x + "<br>" + "y = "+ y);
+                                        }
+                                        f1();
+                                    </script>
+                                </head>
+                                <body >
+                                    
+                                </body>
+                                </html>
+    
+    d)  var allows shadowing. It is the process of re-defining or re-declaring 
+        the same name variable again in scope.
+                                
+                                            <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <title>HTML Form</title>
+                                
+                                <script type="text/javascript">
+                                    "use strict"
+                                    function f1() {
+                                        var x;  // declaring
+                                        x = 10; // rendering
+                                        if(x == 10) {
+                                            var y = 20; //  initialization
+                                            var x;      //  re-defining: shadowing
+                                            x = 40;
+                                        }
+                                        document.write("x = " + x + "<br>" + "y = "+ y);
+                                    }
+                                    f1();
+                                </script>
+                            </head>
+                            <body >
+                                
+                            </body>
+                            </html>
+            
+    e)  var allows hoisting. It is a technique where you can declare the variable
+        after using it in the logic.
+    
+                                <!DOCTYPE html>
+                                <html lang="en">
+                                <head>
+                                    <title>HTML Form</title>
+                                    
+                                    <script type="text/javascript">
+                                        "use strict"
+                                        function f1() {
+                                            x = 10;
+                                            document.write("x = " + x);
+                                            var x;
+                                        }
+                                        f1();
+                                    </script>
+                                </head>
+                                <body >
+                                    
+                                </body>
+                                </html>
