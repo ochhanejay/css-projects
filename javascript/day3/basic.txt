@@ -237,3 +237,301 @@ Ex:
                                     
                                 </body>
                                 </html>
+
+
+
+                                let
+                            ===========
+
+    a)  It is used to define block scope variable. It is accessible only within the 
+        block where it is declared or initialized.
+    b)  let allows declaring, rendering and initialization.
+
+                                    <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <title>HTML Form</title>
+                            
+                            <script type="text/javascript">
+                                "use strict"
+                                function f1() {
+                                    var x;
+                                    x = 10;
+                                    if(x==10) {
+                                        let y;
+                                        y = 20;
+                                    }
+                                    document.write("x = " + x + "<br>" + "y = "+ y);
+                                }
+                                f1();
+                            </script>
+                        </head>
+                        <body >
+                            
+                        </body>
+                        </html>
+
+    c)  Let will not support shadowing. Block scope variables can't re-defined
+        with in the scope.
+
+                                                    <!DOCTYPE html>
+                                    <html lang="en">
+                                    <head>
+                                        <title>HTML Form</title>
+                                        
+                                        <script type="text/javascript">
+                                            "use strict"
+                                            function f1() {
+                                                var x;
+                                                x = 10;
+                                                if(x==10) {
+                                                    let y;
+                                                    y = 20;
+                                                    let y = 30; // Identifier 'y' has already been declared
+                                                    document.write("x = " + x + "<br>" + "y = "+ y);
+                                                }
+                                                
+                                            }
+                                            f1();
+                                        </script>
+                                    </head>
+                                    <body >
+                                        
+                                    </body>
+                                    </html>
+
+    d)  let will not suport hoising.
+
+                                                        <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <title>HTML Form</title>
+                                
+                                <script type="text/javascript">
+                                    "use strict"
+                                    function f1() {
+                                        var x;
+                                        x = 10;
+                                        if(x==10) {
+                                            y = 20; // Cannot access 'y' before initialization
+                                            document.write("x = " + x + "<br>" + "y = "+ y);
+                                            let y;
+                                        }
+                                        
+                                    }
+                                    f1();
+                                </script>
+                            </head>
+                            <body >
+                                
+                            </body>
+                            </html>
+
+
+                        const
+                    ===============
+
+a)  const is also block scope.
+b)  const supports only initialization. you can't declare and render.
+c)  const will not support shadowing.
+d)  const will not support hoising.
+
+                                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <title>HTML Form</title>
+                        
+                        <script type="text/javascript">
+                            "use strict"
+                            function f1() {
+                                const x; // Missing initializer in const declaration
+                                x = 10;
+                                document.write("x = "+ x); 
+                                
+                            }
+                            f1();
+                        </script>
+                    </head>
+                    <body >
+                        
+                    </body>
+                    </html>
+
+
+        Ex2:    
+                                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <title>HTML Form</title>
+                            
+                            <script type="text/javascript">
+                                "use strict"
+                                function f1() {
+                                    const x = 10;
+                                    x = 20; // Assignment to constant variable.
+                                    document.write("x = "+ x); 
+                                    
+                                }
+                                f1();
+                            </script>
+                        </head>
+                        <body >
+                            
+                        </body>
+                        </html>
+
+    Ex:
+                                        <!DOCTYPE html>
+                                <html lang="en">
+                                <head>
+                                    <title>HTML Form</title>
+                                    
+                                    <script type="text/javascript">
+                                        "use strict"
+                                        function f1() {
+                                            const x = 10;
+                                            document.write("x = "+ x); 
+                                            
+                                        }
+                                        f1();
+                                    </script>
+                                </head>
+                                <body >
+                                    
+                                </body>
+                                </html>
+
+            
+-   var
+-   let
+-   const
+==================================================================
+                    JavaScript variable naming rules                   
+
+-   Variables naming conventions
+            -   variable name can be alpha numeric with underscore.
+                should contain: a-z, A-Z, 0-9, $ and _
+            -   Name must start with alphabet or _
+            -   Name can't start with number or any other special char.
+            -   Always name must be in camel case.
+                        txtName
+            -   Variables name can't be more than 255 chars
+
+            Eg:
+                var sales_2021 =    4000;   // valid
+                var _sales =    4000;       // valid
+                var 2020_sales  =   4000;   // invalid
+                var sales20may  =   4000;   // valid
+
+========================================================================
+
+                        JavaScript DataTypes
+                        ====================
+
+-   DataTypes determines the type of value that you can store in a variable.
+-   JavaScript is implicitly typed language i.e the datatype of variable
+    will be determined according to the value assigned.
+
+        // var x = 10;     //  x is number
+        // var x = true;   //  x is boolean
+        
+-   JavaScript don't have explicit datatype for any variable.
+-   Problem with JavaScript language is, the variable are not strongly typed
+    i.e they allow contraditionary data.
+
+        var x = 10;     // initialized to number
+        x  = "A"     //  rendering text is valid
+
+        contraditionary type data means different type of data, which is not accepted.
+==============================================================================
+-   JavaScript datatypes are classified into 2 groups
+
+    1.  Primitive types
+    2.  Non-Primitive Types
+
+Primitive types
+===============================
+    -   Primitive datatype are allocated with stack memory.
+    -   Is uses the mechanism Last-in-first-out [LIFO]
+    -   Primitive types have a fixed range of values.
+    -   JavaScript Primitive types Are
+
+        1.  Number
+        2.  Boolean
+        3.  String
+        4.  Null
+        5.  Undefined
+
+Number Type:
+====================
+    -   A Number type is used to store numeric value.
+    -   A numeric value in JavaScript can be
+            -   signed integer
+                    var x = -10; var x = +10;
+            -   unsigned integer
+                    var x = 10;
+            -   floating point
+                    var x = 4.5;        ->  <2.<2
+            -   double
+                    var x = 457.560;    ->  >2.>2
+            -   decimal
+                    var x = 4.55567345345;  29 decimal places.
+            -   exponent
+                    var x = 2e3;    2 * 10 [3]  [2*(10*10*10)]
+            -   binary          ]   
+            -   hexadecimal     ]   from ES5 version
+            -   octal           ]
+
+            var x = 0b1010;     //  x = 10; - binary
+            var x = 0xf00d;     //  x = 61453   -   hexadecimal
+            var x = 0o744       //  x = 484 - octal     
+        
+    Note:   The values from form input elements are by default string type.
+            You have to convert into a number type.
+            JavaScript provides the following conversion.
+        methods:
+            a)  parseInt()      "4.5" parseInt("4.5") 4
+            b)  parseFloat()    "4.5" parseFloat("4.5") 4.5
+
+            <input tpye="text" value="10">
+            <option value="40">
+=========================================================================
+Boolean Type
+=========================
+-   A boolean type is used to store a boolean value, which can be true or false.
+-   Boolean type are used in decision making
+-   In JavaScript boolean type can handle a numeric value while using over
+    conditions and operations
+            true    =   1
+            false   =   0
+
+            var x = 0; // number
+            var x = false;  // boolean but return a number over condtions and operatios
+
+                                        <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <title>HTML Form</title>
+                                
+                                <script type="text/javascript">
+                                    "use strict"
+                                    function f1() {
+                                        var x = false;
+                                        if(x == 1) {
+                                            document.write("X is true")
+                                        } else {
+                                            document.write("X is false")
+                                        }    
+                                    }
+                                    f1();
+                                </script>
+                            </head>
+                            <body >
+                                
+                            </body>
+                            </html>
+
+-   It is recomended to use the boolean condition Always using true or false
+    keywords not 0 or 1.
+
+-   Checkbox and radio are the HTML element that by default return a boolean true or false.
