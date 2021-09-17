@@ -297,7 +297,7 @@ JavaScript Output Properties and Methods.
     <title>Document</title>    
     <script type="text/javascript">
         "use  strict"
-        function DeleteClick() {
+        function DeleteClick1() {
             var x = confirm("Are you sure, you want to delete");
             if(x == true) {
                 alert("Record Deleted")
@@ -309,7 +309,7 @@ JavaScript Output Properties and Methods.
 </head>
 <body>
     <h2>Delete Record</h2>
-    <button onclick="DeleteClick()" type="button"> Delete</button>
+    <button onclick="DeleteClick1()" type="button"> Delete</button>
 </body>
 </html>
 ========================================================================
