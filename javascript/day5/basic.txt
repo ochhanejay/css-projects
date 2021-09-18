@@ -1,0 +1,229 @@
+Dynamically handling String:
+===================================
+-   JavaScript provides a set of methods/functions that are used to manupulate
+    and format the string dynamically.
+
+1. charAt()
+
+2. charCodeAt()
+
+3. indexOf();
+
+4. lastIndexOf():
+
+5. startsWith()	: 
+
+6. endsWith() :
+
+7. concat()	: 
+
+8. localeCompare(): 			    		
+
+9. match() 	
+
+10. repeat() 
+
+11. replace()
+
+12. search() 
+
+13. slice(): 
+
+14. split()
+
+15. substring()
+
+16. substr()
+
+17. toLowerCase()
+
+18. toUpperCase()
+
+19. trim()
+
+20. toString()
+
+21. length()
+
+
+1.  charAt()        :  It returns the character at specified index.
+                        "techxperty"
+                         0123456789
+
+                         var name = "john"
+                         name.charAt(0); // j
+
+2.  charCodeAt()    :   It returns the unicode of character at specified index.
+                        [A=65, Z=90] [a=97, z=122]
+
+                        "techxperty"
+                          e=101  
+                        var name = "Abcd"
+                         name.charCodeAt(0); // 65
+
+
+                                                <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <script type="text/javascript">
+                                function VerifyName(){
+                                    var username = document.getElementById('txtName').value;
+                                    var msg = document.getElementById('msg');
+                                    var code = username.charCodeAt(0);
+                                    if(code >= 65 && code <= 90) {
+                                        msg.innerHTML = `Hello !${username}`;
+                                    } else {
+                                        msg.innerHTML = `Please enter name starting with uppercase letter`;
+                                    }
+                                }
+                            </script>
+                        </head>
+                        <body>
+                            Your name
+                            <input type="text" id="txtName">
+                            <button onclick="VerifyName()" type="button">Submit</button>
+                            <h3 id="msg"></h3>
+                        </body>
+                        </html>
+
+
+3.  indexOf()    : It can search for a word of character in given string and 
+                  return its index number.
+                  If character not found then it return -1.
+                  It gets the index of first occurance.
+                
+                var msg = "Welcome techxperty";
+                msg.indexOf("e"); // 1
+                msg.indexOf("a"); // -1
+
+4.  lastIndexOf()   :   It return the last occurance index number.
+                
+                var msg = "welcome";
+                msg.lastIndexOf('e');   //6
+
+
+                                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <script type="text/javascript">
+                                function VerifyEmail(){
+                                    var email = document.getElementById('txtEmail').value;
+                                    var msg = document.getElementById('msg');
+                                    var emailAtIndex = email.indexOf('@');
+                                    if(emailAtIndex == -1) {
+                                        msg.innerHTML = 'Error: @ requried in Email';
+                                    } else {
+                                        msg.innerHTML = `Your Email ${email} Verified..`;
+                                    }
+                                }
+                            </script>
+                        </head>
+                        <body>
+                            Your Email
+                            <input type="text" id="txtEmail">
+                            <button onclick="VerifyEmail()" type="button">Submit</button>
+                            <h3 id="msg"></h3>
+                        </body>
+                        </html>
+
+
+5. startsWith() :   It verifies whether the string starts with specified char(s)
+                    and returns true/false.            
+
+                                            
+                        <script>
+                            function foo() {
+                                var className = "text-primary";
+                                if(className.startsWith('text')) {
+                                    document.write("The class you defined will apply text effects");
+                                } else if(className.startsWith('form')){
+                                    document.write("you defined form effct")
+                                } else {
+                                    document.write("The class you defined is some miscelaneous");
+                                }
+                            }
+                            foo();
+                        </script>
+6. endsWith()   :   It verifies whether the string ends with specified char(s) and return
+                    true/false
+
+                                        
+                    <script>
+                        function foo() {
+                            var className = "bg-primary";
+                            if(className.endsWith('primary')) {
+                                document.write("The is primary color");
+                            } else if(className.endsWith('danger')){
+                                document.write("The is error color")
+                            } else {
+                                document.write("The class you defined is some miscelaneous");
+                            }
+                        }
+                        foo();
+                    </script>
+
+7. concat() :   It joins 2 or more strings and returns a new string.
+
+
+                                            
+                        <script>
+                            function foo() {
+                                var msg1 = "Hello !";
+                                var name = "John";
+                                var msg2 = "Welcome To JavaScript";
+                                var finalMsg = msg1.concat(name, msg2);
+                                var backTickFinalEx = `${msg1} ${name} ${msg2}`;
+                                document.write(finalMsg);
+                                document.write(backTickFinalEx);
+
+                            }
+                            foo();
+                        </script>
+
+        
+8. localeCompare():     It is used to compare 2 strings.
+                        It returns a number 0 if both string are equals.
+                         // It returns 1 if not equl and after the sort.
+                         // it returnss -1 if not equal and before the sort.
+
+
+                        <script>
+                            function foo() {
+                                var password = "1234";
+                                var confirmPassword = "1@34";
+                                if(password.localeCompare(confirmPassword) == 0) {
+                                    document.write("Password Valid");
+                                } else {
+                                    document.write("Password Mismatch")
+                                }
+                            }
+                            foo();
+                        </script>
+
+9. match(): it verifies whether the given string is matching with a regular expression
+            and returns true and false.
+
+                                    <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                        <script>
+                            function VerifyMobile() {
+                                var mobileNumber = document.getElementById('txtMobile').value;
+                                var msg = document.getElementById('msg');
+                                var regExp = /\+91[0-9]{10}/;
+                                if(mobileNumber.match(regExp)) {
+                                    msg.innerHTML = `${mobileNumber} Mobile Verified`;
+                                } else {
+                                    msg.innerHTML = "invalid mobile"
+                                }
+
+                                }
+                        </script>
+                        </head>
+                        <body>
+                            Your Mobile
+                            <input type="text" placeholder="eg: +91 and 10 digits" id="txtMobile">
+                            <button onclick="VerifyMobile()">Submit</button>
+                            <h3 id="msg"></h3> 
+                        </body>
+                        </html>

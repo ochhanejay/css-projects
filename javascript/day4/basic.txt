@@ -94,7 +94,7 @@
 
                     <script>
                         function foo(){
-                            var msg = "<a href='home.html'>Home</a>";
+                            var msg = "<a href="home.html">Home</a>";
                             document.write(msg);
                             var msg2 = '<a href="home.html">Home</a>';
                             document.write(msg2);
@@ -125,4 +125,15 @@
 Escaping characters in String:
     -   A String can contain special characters.
     -   Few special characters are ignored by compiler and they escape printing.
-    
+    -   Any escaping character can be defined with "\". It will prevent escaping
+        and prints the non-printable characters.
+        
+                <script>
+                    function foo(){
+                        var path = "c:\\images\\cars\\audi.png <br>";
+                        document.write(path);
+                        var path = "\"c:\\images\\cars\\audi.png\"";
+                        document.write(path);
+                    }
+                    foo();
+                </script>
