@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-   <script>
-       function VerifyMobile() {
-           var mobileNumber = document.getElementById('txtMobile').value;
-           var msg = document.getElementById('msg');
-           var regExp = /\+91[0-9]{10}/;
-           if(mobileNumber.match(regExp)) {
-               msg.innerHTML = `${mobileNumber} Mobile Verified`;
-           } else {
-               msg.innerHTML = "invalid mobile"
-           }
-
-        }
-   </script>
-</head>
-<body>
-    Your Mobile
-    <input type="text" placeholder="eg: +91 and 10 digits" id="txtMobile">
-    <button onclick="VerifyMobile()">Submit</button>
-    <h3 id="msg"></h3> 
-</body>
-</html>
+                        <html lang="en">
+                        <head>
+                        <script>
+                            function VerifyMobile() {
+                                var mobileNumber = document.getElementById('txtMobile').value;
+                                var msg = document.getElementById('msg');
+                                var regExp = /\+91[0-9]{10}/;
+                                if(mobileNumber.match(regExp)) {
+                                    msg.innerHTML = `${mobileNumber} Mobile Verified`;
+                                } else if(mobileNumber=='') {
+                                    msg.innerHTML = "mobile number should not be empty"
+                                } else {
+                                    msg.innerHTML = 'invalid mobile';   
+                                }
+                            }
+                        </script>
+                        </head>
+                        <body>
+                            Your Mobile
+                            <input type="text" placeholder="eg: +91 and 10 digits" id="txtMobile">
+                            <button onclick="VerifyMobile()">Submit</button>
+                            <h3 id="msg"></h3> 
+                        </body>
+                        </html>

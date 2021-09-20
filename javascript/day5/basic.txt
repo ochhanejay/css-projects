@@ -1,25 +1,26 @@
 Dynamically handling String:
 ===================================
--   JavaScript provides a set of methods/functions that are used to manupulate
+-   JavaScript provides a set of methods/functions that are used to manipulate
     and format the string dynamically.
 
-1. charAt()
+1. charAt():        "techxperty".charAt(1) ->  e
 
-2. charCodeAt()
+2. charCodeAt():    "techxperty".charCodeAt(1) ->  102
 
-3. indexOf();
+3. indexOf();       "techxperty".indexOf('e')   ->  1 
 
-4. lastIndexOf():
+4. lastIndexOf():   "techxperty".lastIndexOf('e')   ->  6 
 
-5. startsWith()	: 
+5. startsWith()	:   "tech xperty".startsWith('tech')    ->  true
 
-6. endsWith() :
+6. endsWith() :     "tech xperty".endsWith('xperty')    ->  true
 
-7. concat()	: 
+7. concat()	:       "tech" "xperty" "tech".concat("xperty") ->  techxperty
 
-8. localeCompare(): 			    		
+8. localeCompare(): "tech".localeCompare("tech")    ->  0		    		
 
-9. match() 	
+9. match():         var regExp = /\+91[0-9]{10}/;
+                    mobileNumber.match(regExp)      ->  true/false
 
 10. repeat() 
 
@@ -43,7 +44,6 @@ Dynamically handling String:
 
 20. toString()
 
-21. length()
 
 
 1.  charAt()        :  It returns the character at specified index.
@@ -52,6 +52,29 @@ Dynamically handling String:
 
                          var name = "john"
                          name.charAt(0); // j
+
+                         
+                                                <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <script type="text/javascript">
+                                function VerifyName(){
+                                    var username = document.getElementById('txtName').value;
+                                    var msg = document.getElementById('msg');
+                                    var code = username.charAt(0);
+                                    msg.innerHTML = `Hello !${code}`;
+                                    
+                                }
+                            </script>
+                        </head>
+                        <body>
+                            Your name
+                            <input type="text" id="txtName">
+                            <button onclick="VerifyName()" type="button">Submit</button>
+                            <h3 id="msg"></h3>
+                        </body>
+                        </html>
+
 
 2.  charCodeAt()    :   It returns the unicode of character at specified index.
                         [A=65, Z=90] [a=97, z=122]

@@ -1,0 +1,194 @@
+1. charAt():        "techxperty".charAt(1) ->  e
+
+2. charCodeAt():    "techxperty".charCodeAt(1) ->  102
+
+3. indexOf();       "techxperty".indexOf('e')   ->  1 
+
+4. lastIndexOf():   "techxperty".lastIndexOf('e')   ->  6 
+
+5. startsWith()	:   "tech xperty".startsWith('tech')    ->  true
+
+6. endsWith() :     "tech xperty".endsWith('xperty')    ->  true
+
+7. concat()	:       "tech" "xperty" "tech".concat("xperty") ->  techxperty
+
+8. localeCompare(): "tech".localeCompare("tech")    ->  0		    		
+
+9. match():         var regExp = /\+91[0-9]{10}/;
+                    mobileNumber.match(regExp)      ->  true/false
+
+10. repeat():   It will copy the current string and add within the current string
+                with specified number of copies. duplicate.
+
+                <script>
+                    function foo(){
+                        var str = 'Welcome to Javascript <br>';
+                        document.write(str.repeat(4));
+                    }
+                    foo();
+                </script>
+
+
+11. replace():  It can search for a given string and replace it with a new string.
+
+                <script>
+                    function foo(){
+                        var str = 'Welcome to Javascript <br>';
+                        var newStr = str.replace("Javascript", "Typescript");
+                        document.write(`${str} <br> ${newStr}`);
+                    }
+                    foo();
+                </script>
+
+12. search():   It can search for specified chars and return the starting index.
+                It returns -1 if not found.
+                It can use a string or regular expression for searching.
+
+                    <script>
+                        function foo(){
+                            var str = 'Welcome to Javascript <br>';
+                            document.write(str.search("Javascript"));
+                        }
+                        foo();
+                    </script>
+
+                    <script>
+                        function foo(){
+                            var str = 'Welcome to Javascript <br>';
+                            document.write(str.search("Typescript")); // -1
+                        }
+                        foo();
+                    </script>
+
+13. slice(): It is used to extract a portion of string based on specified
+                index and return a new string.
+                 (end not included).
+
+                <script>
+                    function foo(){
+                        var str = 'Welcome to Javascript <br>';
+                        document.write(str.slice(0,7));
+                    }
+                    foo();
+                </script>
+
+Note: slice() it can extract and return a new string array
+
+14. substring():    It is used to extract specified chars between given index.
+                    It can read towards left and towards right and right staring with specified
+                    index.
+
+                    Syntax:
+                        string.substring(start,end); //ending not required.
+                        document.write(str.substring(11));
+
+                    <script>
+                        function foo(){
+                            var str = 'Welcome to Javascript <br>';
+                            document.write(str.substring(0,7));
+                        }
+                        foo();
+                    </script>
+
+                    <script>
+                        function foo(){
+                            var str = 'Welcome to Javascript <br>';
+                            document.write(str.substring(7,0));
+                        }
+                        foo();
+                    </script>
+
+15. substr():   It is used to extract specified chars between given index.
+                It can read towards right not left.
+
+                <script>
+                    function foo(){
+                        var str = 'Welcome to Javascript <br>';
+                        document.write(str.substr(0,7)); // valid
+                        document.write(str.substr(7,0)); // invalid
+                    }
+                    foo();
+                </script>
+
+17. toLowerCase(): Converts text into lowercase letters
+
+18. toUpperCase():  Converts text into uppercase letters.
+
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <script>
+                            function changeCase(){
+                                var username = document.getElementById('txtName').value;
+                                document.getElementById('txtName').value = username.toLowerCase();
+                            }
+                        </script>
+                    </head>
+                    <body>
+                        Username:
+                        <input onblur="changeCase()" type="text" id="txtName" placeholder="Name in small char">    
+                    </body>
+                    </html>
+
+
+Ex: Convert the text into sentense case. First letter of sentense should be capital.
+        eg: weLCome to JavaScript.
+        ->  Welcome to javascript. 
+
+
+                <script>
+                    function foo(){
+                        var msg = 'weLCome to  JAVAscript'; // document.getElementById('').value;
+                        document.write(`Actual Message =  ${msg} <br>`);
+                        var firstChar = msg.charAt(0);
+                        var resChars = msg.substring(1);
+                        var sentenseChar = firstChar.toUpperCase() + resChars.toLowerCase();
+                        document.write(`Sentence Case = ${sentenseChar}`);
+                    }
+                    foo();
+                </script>
+16. split(): It split the string at given char/seperator and return an array   
+                of strings.
+
+
+            <script>
+                function foo(){
+                    var product = 'Mobile-40000-Available';
+                    var collection = product.split('-');// try with without split
+                    // collection[0]=Mobile, collection[1]=4000, collection[2]=Available
+                    document.write(`Price = ${collection[1]}`);    
+                }
+                foo();
+            </script>
+
+Task: Write logic to print given sentense in Title case. 
+        [Every word first letter should be uppercase]
+    ex:
+	actual : welcome to javascript
+	print : Welcome To JavaScript
+
+19. trim(): It is used to remove the leading spaces in a string.
+            The trim() method removes whitespaces form both sildes of a string.
+            "      techxperty   ".trim()->  "techxperty"
+
+
+<script>
+    function foo(){
+        var password = " john";
+        if(password.trim() == "john"){
+            document.write("Verified..");
+        } else {
+            document.write('Invalid password');
+        }
+    }
+    foo();
+</script>
+
+
+
+Premitive Data Type:
+    1)  number
+    2)  Boolean
+    3)  String
+    4)  null
+    5)  undefind

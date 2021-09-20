@@ -57,7 +57,7 @@
                                     } else {
                                         alert("Please select the gender");
                                     }
-                                    }
+                                    }   
                                 </script>
                             </head>
                             <body>
@@ -127,7 +127,7 @@ Escaping characters in String:
     -   Few special characters are ignored by compiler and they escape printing.
     -   Any escaping character can be defined with "\". It will prevent escaping
         and prints the non-printable characters.
-        
+
                 <script>
                     function foo(){
                         var path = "c:\\images\\cars\\audi.png <br>";
