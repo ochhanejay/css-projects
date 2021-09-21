@@ -66,8 +66,9 @@
 
                 <script>
                     function foo(){
-                        var str = 'Welcome to Javascript <br>';
+                        var str = 'Welcome,to,Javascript <br>';
                         document.write(str.slice(0,7));
+                        document.write(str.slice(1));
                     }
                     foo();
                 </script>
@@ -153,7 +154,7 @@ Ex: Convert the text into sentense case. First letter of sentense should be capi
 
             <script>
                 function foo(){
-                    var product = 'Mobile-40000-Available';
+                    var product = 'Mobile-4000-Available';
                     var collection = product.split('-');// try with without split
                     // collection[0]=Mobile, collection[1]=4000, collection[2]=Available
                     document.write(`Price = ${collection[1]}`);    

@@ -1,0 +1,85 @@
+Primitive Types
+- Number
+- String
+- Boolean
+- Undefined
+- Null
+
+
+                    Undefined
+
+-   It is a type defined for variables where value is not defined.
+-   Compiler uses "undefind" as type for variable that are not defined with value.
+
+                <script>
+                    function foo(){
+                        var name = "TV";
+                        var price;
+                        if(price == undefined) {
+                            document.write(`Name = ${name}`);
+                        } else {
+                            document.write(`Name = ${name} <br> 'Price = ${price}`);
+                        }
+                        
+                    }
+                    foo();
+                </script>
+
+
+
+                    Null Type
+
+-   Null is a type defined for variables when value is not defined during run time.
+-   
+<script>
+    function foo(){
+        var name = prompt('Enter Name');
+        if(name == null) {
+
+        } else if(name == '') {
+            document.write('name cannot be empty')
+        } else {
+            document.write(`${name}`)
+        }
+                
+    }
+    foo();
+</script>
+
+
+======================================================================================================
+
+Non-Primitive Type
+
+-   Non-Primitive types uses memory heap.
+-   Memory heap is cache memory of browser.
+-   They don't have any fixed range for value.
+-   
+    1)  Array
+    2)  Object
+    3)  Regular expression
+
+        Array Type: same time / different type
+    ===============================================
+
+ -  Array reduce complexity by storing multiple values under one name.
+ -  JavaScript array can handle any type of value.
+ -  JavaScript array size can be changed dynamically.
+
+
+ Declaring array and intialize memory
+ a) Array Meta character "[]"
+        eg: var product = [];
+
+ b) Array Constructor = "Array()"
+    var products = new Array();
+
+-   Array meta character [] allow different type of value
+-   Array Constructor "Array()" can restrict the values to simillar type expliity.
+
+
+Initialize:
+    var product = ["TV", "Mobile"];
+
+    var product = [];
+    product[0] = "TV";

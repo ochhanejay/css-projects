@@ -318,6 +318,14 @@ JavaScript Output Properties and Methods.
     -   These are the output Properties used to display message inside any
         container element of HTML which can be display text.
     -   which can display text
+
+
+
+
+
+
+
+    
         <div> <span> <p> <blockquote> <h1> <dd> <td> <th> <dt> <li> etc...
     -   innerHTML can display a message with HTML formats i.e. iw will allow
         tags to format message.

@@ -1,0 +1,12 @@
+
+<script>
+    function foo(){
+        var password = " john";
+        if(password.trim().encrypt() == "527bd5b5d689e2c32ae974c6229ff785527bd5b5d689e2c32ae974c6229ff785527bd5b5d689e2c32ae974c6229ff785"){
+            document.write("Verified..");
+        } else {
+            document.write('Invalid password');
+        }
+    }
+    foo();
+</script>
