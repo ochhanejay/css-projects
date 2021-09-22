@@ -1,0 +1,237 @@
+Array Example:
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bootstrap/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Casoral</title>
+
+    <script>
+        var products = ["n1.jpg", "n2.jpg", "n3.webp", "n4.jpg", "top.png"];
+        var count = 0;
+        function ChangeImage() {
+            var sliderValue = document.getElementById('slider').value;
+            console.log(typeof(sliderValue));
+            document.getElementById('pic').src = products[sliderValue];
+            count = parseInt(sliderValue);
+        }
+        function bodyload() {
+            document.getElementById('pic').src = products[0];
+        }
+        
+        function NextClick(){
+            if(count < products.length-1){
+                count = count + 1;
+            }
+            document.getElementById('pic').src = products[count];
+            document.getElementById('slider').value = count;
+        }
+        function PreviousClick() {
+            if(count > 0){
+                count = count - 1;
+            }
+            document.getElementById('pic').src = products[count];
+            document.getElementById('slider').value = count;
+        }
+
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Amazon Products</h2>
+        </div>
+        <div class="card-body text-center">
+            <button onclick="PreviousClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-left"></span>
+            </button>    
+            <img id="pic" width="400" height="400"> 
+            <button onclick="NextClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer text-center">
+            <input onchange="ChangeImage()" type="range" min="0" max="4" value="0" id="slider">
+        </div>
+    </div>
+</body>
+</html>
+
+
+====================================================================
+                        Array Manipulations:
+    JavaScript "Array " object provides a set of properties and methods that are  used to manipulate array.
+
+    1.  Reading values from an Array.
+
+    methods                             Description
+=========================================================
+
+    toString()                          It reads and returns the array elements into a string sperated with ",".
+
+    join()                              It reads and returns the array elements into a string seperated with
+                                        user defined delimeter [own seperator ('-')]
+
+    for..of                             It is an iterator used to read and return all elements in an array
+
+    find()                              It can search for a value by using any condition and return the
+                                        first occurance value.
+
+    filter()                            It can search for value(s) by using a condition and return all values
+                                        that are metching with the condition.
+
+
+toString and join
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        document.write(`To String = ${products.toString()} <br>`);
+        document.write(`Join = ${products.join('-->')} <br>`);
+    }
+    foo();
+</script>
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        document.write(`To String = ${products.toString()} <br>`);
+        document.write("Join = "+products.join('-->')+" <br>");
+    }
+    foo();
+</script>
+
+
+for..of()  
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        var count = 0;
+        for( var item of products) {
+            count = count+1;
+            document.write(`${count} ${item} <br>`)
+        }
+    }
+    foo();
+</script>
+
+
+find().. ES5: first occurance
+
+<script>
+    function foo() {
+        var sales = [12000, 40000, 35000, 2000, 6000]; // i want all the sales whose are greater than 30000
+        document.write(`${sales.find(function(val){
+            return val >= 30000;
+        })}`);
+    }
+    foo();
+</script>
+
+O/P:    40000
+
+
+filter();
+
+<script>
+    function foo() {
+        var sales = [12000, 40000, 35000, 2000, 6000]; // i want all the sales whose are greater than 30000
+        document.write(`${sales.filter(function(item){
+            return item >=30000;
+        })}`)
+    }
+    foo();
+</script>
+
+Eg: 2
+
+<script>
+    function foo() {
+        var sales = [12000, 40000, 35000, 2000, 6000];
+        function search(val) {
+            return val <= 30000;
+        }
+        document.write(`${sales.filter(search)}`)
+    }
+    foo();
+</script>
+===============================================================================
+2.              Adding values into Array
+
+push():         It adds a new element into array as last element.
+
+unshift():      It adds a new elements as First element.
+
+splice():       It adds new elements at specified index.
+
+
+    collection.push('newitem', 'newitem2'...)
+    collection.unshift('newitem', 'newitem2'...)
+    collection.splice(startIndex, countOfItemToRemove, 'newitem', 'newitem2'..)
+
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        function PrintList(){
+            document.write(`products = ${products.toString()} <br>`);
+        }
+
+        PrintList();
+        products.push('Watch', 'Sunglasses');
+        PrintList();
+        products.unshift("Laptop");
+        PrintList();
+        products.splice(2, 0, 'Earpods');
+        PrintList();
+    }
+    foo();
+</script>
+=========================================================
+
+3.      Removing value form array
+
+pop()   It removes and return the last item.
+
+shift() It remove and return the first item
+
+splice()    It removes any item based on specified index.
+
+
+pop(), shift()
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        function PrintList(){
+            document.write(`products = ${products.toString()} <br>`);
+        }
+        PrintList();
+        document.write(`Product ${products.pop()} Deleted <br>`);
+        PrintList();
+        document.write(`Product ${products.shift()} Deleted <br>`);
+        PrintList();
+    }
+    foo();
+</script>
+
+splice()
+
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        function PrintList(){
+            document.write(`products = ${products.toString()} <br>`);
+        }
+        PrintList();
+        document.write(`${products.splice(1, 1)} Removed <br>`); //(1,2)
+        PrintList();
+    }
+    foo();
+</script>

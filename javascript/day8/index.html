@@ -1,0 +1,12 @@
+<script>
+    function foo() {
+        var products = ['TV', 'Mobile', 'Shoe'];
+        function PrintList(){
+            document.write(`products = ${products.toString()} <br>`);
+        }
+        PrintList();
+        document.write(`${products.splice(1, 1)} Removed <br>`); //(1,2)
+        PrintList();
+    }
+    foo();
+</script>
