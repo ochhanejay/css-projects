@@ -1,0 +1,182 @@
+Search for elements in Array
+----------------------------------------------------
+indexOf()
+
+lastIndexOf()
+
+find()
+
+filter()
+
+        Syntax: arrayName.indexOf('value');
+
+=====================================================
+Sorting Array elements.
+
+sort()  :   It arranges elements in ascending order.
+
+reverse():  It arranges in reverse order i.e from bottom to top.
+
+<script>
+    function f1() {
+        var products = ['A', 'C', 'D', 'B'];
+        products.sort();
+        products.reverse();
+        document.write(products.toString());
+    }
+    f1();
+</script>
+
+
+<script>
+    function f1() {
+        var products = [1, 7, 2, 3, 14];
+        products.sort(function(a, b){return a - b});
+        products.reverse();
+        document.write(products.toString());
+    }
+    f1();
+</script>
+
+=============================================================================
+Creating and Adding elements Dynamically into html.
+
+-   JavaScript provides a library of pre-defined objects like images, anchor, form etc...
+-   You can use these objects and create a new elements.
+
+    Syntax:
+        var pic = new Image();
+        var opt = new Option();
+    
+-   You can use the element name and create Dynamically.
+
+    Syntax:
+
+    var table = document.createElement('table');
+    var opt = document.createElement('option');
+
+-   You can add the elements into HTML page by using the function
+    "appendChild()"
+
+
+Ex: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function AddPicture() {
+            var pic = new Image();
+            pic.src = '../day8/n2.jpg';
+            pic.width = 200;
+            pic.height = 200;
+            pic.border = 1;
+            document.getElementById('container').appendChild(pic)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddPicture()">Add Picture</button>
+    <div id='container' style="margin-top: 20px;">
+
+    </div>    
+</body>
+</html>
+
+Ex: Adding Items into DropDownList: Array
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            var products = ['Select a Product', 'TV', 'Mobile', 'Nike Casuals'];
+            var lstProducts = document.getElementById('lstProducts');
+            for(var item of products) {
+                var opt = document.createElement('option');
+                opt.value = item;
+                opt.text = item;
+                lstProducts.appendChild(opt);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+        <h2>Select products</h2>
+        <select id="lstProducts" class="form-control">
+            
+        </select>
+</body>
+</html>
+
+
+
+Ex: Ol 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var products = ['TV', 'Mobile', 'Laptop', 'Watch'];
+        function bodyload (){
+            var lstProducts = document.getElementById('lstProducts');
+            for(var item of products) {
+                var li = document.createElement('li');
+                li.innerHTML = item;
+                lstProducts.appendChild(li);
+            }
+        }
+        function AddProduct() {
+            document.getElementById('lstProducts').innerHTML = '';
+            var newProduct = document.getElementById('txtName').value;
+            products.push(newProduct);
+            bodyload(); 
+            alert('Product Added');
+            document.getElementById('txtName').value = '';
+        }
+    </script>
+
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <label>New Product</label>
+    <input type="text" class="form-control" id="txtName">
+    <button class="btn btn-primary" onclick="AddProduct()">Add Product</button>
+    <h2>Products</h2>
+    <ol id="lstProducts">
+
+    </ol>
+</body>
+</html>
+
+
+=========================================================================================
+Object Types:
+
+-   Object comprised/stored of data and logic.
+-   Data is stored in properties and logic in functions.
+-   The properties and functions with in object can be accessed by using "this"
+-   Outside the object you can access them by using object name.
+
+    Syntax:
+        var objectName = {
+            PropertyName: value,
+            FunctionName: function() {}
+        };
+
+-   Proeperties can contain both premitive or non-premitive type data.
+
+
+
+
+
+
+
+
+
+
+

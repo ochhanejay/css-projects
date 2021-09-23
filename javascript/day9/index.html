@@ -1,0 +1,53 @@
+<style>
+    dl {
+        border: 2px solid darkcyan;
+        border-radius: 10px;
+        padding: 20px;
+        float: left;
+        margin-left: 20px;
+    }
+    dt {
+        background-color: gray;
+        color: white;
+    }
+</style>
+<script>
+    function f1() {
+        var product = {
+            name: '',
+            price: 0,
+            isInStock: true,
+            qty: 0,
+            shippedTo: [],
+            total: function() {
+                return this.price * this.qty;
+            },
+            print: function() {
+                document.write(`<dl>
+                    <dt>Name</dt><dd></dd> 
+                        <dt>Name</dt><dd>${this.name}</dd>
+                        <dt>Price</dt><dd>${this.price}</dd>
+                        <dt>IsInStock</dt><dd>${ (this.isInStock == true)?"Available":"Out Of Stock" }</dd>
+                        <dt>Quantity</dt><dd>${this.qty}</dd>
+                        <dt>Shipped To</dt><dd>${this.shippedTo.toString()}</dd>
+                        <dt>TotalName</dt><dd>${this.total()}</dd>
+                    </dl>`)
+            } 
+        }
+
+        product.name = 'Samsung TV';
+        product.price = 43000.88;
+        product.isInStock = false;
+        product.shippedTo = ['Delhi', 'Indore'];
+        product.qty = 0;
+        product.print();
+
+        product.name = 'Nike Casuals';
+        product.price = 12000.88;
+        product.isInStock = true;
+        product.shippedTo = ['Mumbai', 'Hyd', 'Indore'];
+        product.qty = 3;
+        product.print();
+    }
+    f1();
+</script>
