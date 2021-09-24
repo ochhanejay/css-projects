@@ -81,7 +81,7 @@ Ex:
     <div id='container' style="margin-top: 20px;">
 
     </div>    
-</body>
+        </body>
 </html>
 
 Ex: Adding Items into DropDownList: Array

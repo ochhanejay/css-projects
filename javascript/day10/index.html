@@ -1,0 +1,12 @@
+<script>
+    function foo(name){
+        // var revName = name.split('').reverse().join('');
+        var revName = '';
+        for(var i = name.length-1; i >= 0; i-- ){
+            revName = revName+name[i];
+        }
+        console.log(revName);
+    }
+    var name = prompt();
+    foo(name);
+</script>

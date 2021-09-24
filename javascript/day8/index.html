@@ -1,12 +1,96 @@
-<script>
-    function foo() {
-        var products = ['TV', 'Mobile', 'Shoe'];
-        function PrintList(){
-            document.write(`products = ${products.toString()} <br>`);
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bootstrap/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Casoral</title>
+
+    <script>
+        var products = [
+                        {
+                            Name: 'N1', 
+                            photo:"n1.jpg", 
+                            price: 6000
+                        }, 
+                        {
+                            Name: 'N2', 
+                            photo:"n2.jpg", 
+                            price: 4000
+                        }, 
+                        {
+                            Name: 'N3', 
+                            photo:"n3.webp", 
+                            price: 3000
+                        }, 
+                        {
+                            Name: 'N4', 
+                            photo:"n4.jpg", 
+                            price: 1000
+                        }, 
+                        {
+                            Name: 'N5', 
+                            photo:"top.png", 
+                            price: 24000
+                        }
+                    ];
+        var count = 0;
+        function loadData(xyz) {
+            document.getElementById('pic').src = products[xyz].photo;            
+            document.getElementById('prodName').innerHTML = products[xyz].Name;
+            document.getElementById('prodPrice').innerHTML = products[xyz].price;
         }
-        PrintList();
-        document.write(`${products.splice(1, 1)} Removed <br>`); //(1,2)
-        PrintList();
-    }
-    foo();
-</script>
+        function ChangeImage() {
+            var sliderValue = document.getElementById('slider').value;
+            console.log(typeof(sliderValue));
+            count = parseInt(sliderValue);
+            loadData(sliderValue);
+        }
+        function bodyload() {
+            loadData(0);
+        }
+        
+        function NextClick(){
+            if(count < products.length-1){
+                count = count + 1;
+            }
+            document.getElementById('slider').value = count;
+            loadData(count);
+        }
+        function PreviousClick() {
+            if(count > 0){
+                count = count - 1;
+            }
+
+            document.getElementById('slider').value = count;
+            loadData(count);
+        }
+
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Amazon Products</h2>
+        </div>
+        <div class="card-body text-center">
+            <button onclick="PreviousClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-left"></span>
+            </button>   
+            <h2 id="prodName"></h2> 
+            <img id="pic" width="400" height="400"> 
+            <h3 id="prodPrice"></h3>
+            <button onclick="NextClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer text-center">
+            <input onchange="ChangeImage()" type="range" min="0" max="4" value="0" id="slider">
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,356 @@
+
+    []          ->  Array
+    {}          ->  Object
+    [{}, {}]    ->  Array of Object - JSON
+
+        var products = [
+            {
+                name: '',
+                price: 0,
+                photo: ''
+            },
+            {
+                
+            }
+        ]
+Eg:
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bootstrap/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Casoral</title>
+
+    <script>
+        var products = [
+                        {
+                            Name: 'N1', 
+                            photo:"n1.jpg", 
+                            price: 6000
+                        }, 
+                        {
+                            Name: 'N2', 
+                            photo:"n2.jpg", 
+                            price: 4000
+                        }, 
+                        {
+                            Name: 'N3', 
+                            photo:"n3.webp", 
+                            price: 3000
+                        }, 
+                        {
+                            Name: 'N4', 
+                            photo:"n4.jpg", 
+                            price: 1000
+                        }, 
+                        {
+                            Name: 'N5', 
+                            photo:"top.png", 
+                            price: 24000
+                        }
+                    ];
+        var count = 0;
+        function loadData(xyz) {
+            document.getElementById('pic').src = products[xyz].photo;            
+            document.getElementById('prodName').innerHTML = products[xyz].Name;
+            document.getElementById('prodPrice').innerHTML = products[xyz].price;
+        }
+        function ChangeImage() {
+            var sliderValue = document.getElementById('slider').value;
+            console.log(typeof(sliderValue));
+            count = parseInt(sliderValue);
+            loadData(sliderValue);
+        }
+        function bodyload() {
+            loadData(0);
+        }
+        
+        function NextClick(){
+            if(count < products.length-1){
+                count = count + 1;
+            }
+            document.getElementById('slider').value = count;
+            loadData(count);
+        }
+        function PreviousClick() {
+            if(count > 0){
+                count = count - 1;
+            }
+
+            document.getElementById('slider').value = count;
+            loadData(count);
+        }
+
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Amazon Products</h2>
+        </div>
+        <div class="card-body text-center">
+            <button onclick="PreviousClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-left"></span>
+            </button>   
+            <h2 id="prodName"></h2> 
+            <img id="pic" width="400" height="400"> 
+            <h3 id="prodPrice"></h3>
+            <button onclick="NextClick()" class="btn btn-outline-primary">
+                <span class="fas fa-chevron-right"></span>
+            </button>
+        </div>
+        <div class="card-footer text-center">
+            <input onchange="ChangeImage()" type="range" min="0" max="4" value="0" id="slider">
+        </div>
+    </div>
+</body>
+</html>
+
+
+======================================================================================
+Non Premitive Type:
+-   Array.
+-   Object.
+-   RegularExpression.
+
+Pattern:
+    A Pattern allow to validate the format of input value.
+    It uses a regular expression to verifying the input value.
+    RegularExpression is build by using meta character and quantifiers.
+
+
+    Meta character:                             Description
+
+    ?                                           Zero or one occurance of char.
+    *                                           Zero or more occurance of char.
+    +                                           One or more occurance of char
+    [0-9]                                       only numeric allowed.
+    [A-Z]                                       Only uppercase allowed.
+    [a-z]                                       only lowercase allowed
+    \                                           It is used for any individual entity [special char]
+
+    Quantifiers                                         
+
+    {n} - number                                {4} exacty only 4 chars allowed
+    {n,m}                                       {4,10} minimum 4 and maximum 10 chars
+    {n,}                                        {4,} minumum 4 and maximum any number of char
+
+
+    [A-Z]{4,15}
+    \+91[0-9]{10}
+
+->  It is enclosed with "/ /"
+    Syntax: 
+        var regExp = /\+91[0-9]{10}/
+
+->  Regular Expression is verified with your value by using "match()"  function. It return boolean true of false.
+
+    yourValue.match(regExp) -> true/false
+
+Ex: Password Restriction.
+
+->  Meter tag HTML
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    <script>
+        function VerifyPassword(){
+            var password = document.getElementById('txtPwd').value;
+            var regExp = /(?=.*[A-Z])\w{4,15}/; //atlist one capital letter [(\?=.*[A-Z])];
+            var msg = document.getElementById('msg');
+            function ShowStatus(min, max, value, low, high) {
+                var status = document.getElementById('status');
+                status.min = min;
+                status.max = max;
+                status.value = value;
+                status.low = low;
+                status.high = high;
+            }
+
+            if(password.match(regExp)) {
+                msg.className = 'text-success';
+                msg.innerHTML = 'Strong Password';
+                ShowStatus(1,100,100,0,0); // low and high are 0 = green color 
+                
+            } else {
+                if(password.length < 4) {
+                    msg.className = 'text-danger'
+                    msg.innerHTML = 'Poor Password';
+                    ShowStatus(1,100,100, 60, 80); // less gap between low and high: red color
+                } else {
+                    msg.className = 'text-warning';
+                    msg.innerHTML = "Weak Password";
+                    ShowStatus(1,100,100,40,80); // more gap: yellow color
+                }
+            }
+        }
+    </script>
+    <style>
+        meter {
+            height: 50px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <h2>Verify Password</h2>
+    <div class="form-group">
+        <label>Password</label>
+        <div>
+            <input onkeyup="VerifyPassword()" type="password" id="txtPwd" class="form-control" placeholder="4 to 15 chars with atlist 1 uppercase letter"> 
+            <meter id="status" min="1" max="100"></meter><br>
+            <span id="msg"></span>
+        </div>
+    </div>
+</body>
+</html>
+
+
+Ex:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    <script>
+        function VerifyPassword(){
+            var password = document.getElementById('txtPwd');
+            var regExp = /(?=.*[A-Z])\w{4,15}/; //atlist one capital letter [(\?=.*[A-Z])];
+            var msg = document.getElementById('msg');
+
+            if(password.value.match(regExp)) {
+                password.className = 'successStyle';
+            } else {
+                if(password.value.length < 4) {
+                    password.className = 'errorStyle';
+                } else {
+                    password.className = 'warnStyle';
+                }
+            }
+        }
+    </script>
+    <style>
+        .errorStyle {
+            border: 5px solid red;
+            box-shadow: 2px 2px 4px red;
+        }
+        .successStyle {
+            border: 5px solid green;
+            box-shadow: 2px 2px 4px green;
+        }
+        
+        .warnStyle {
+            border: 5px solid yellow;
+            box-shadow: 2px 2px 4px yellow;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <h2>Verify Password</h2>
+    <div class="form-group">
+        <label>Password</label>
+        <div>
+            <input onkeyup="VerifyPassword()" type="password" id="txtPwd" class="form-control" placeholder="4 to 15 chars with atlist 1 uppercase letter"> 
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+Ex: Input password validation
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    <script>
+        function VerifyPassword(){
+            var password = document.getElementById('txtPwd');
+            var regExp = /(?=.*[A-Z])\w{4,15}/; //atlist one capital letter [(\?=.*[A-Z])];
+            var msg = document.getElementById('msg');
+
+            if(password.value.match(regExp)) {
+                password.className = 'successStyle';
+            } else {
+                if(password.value.length < 4) {
+                    password.className = 'errorStyle';
+                } else {
+                    password.className = 'warnStyle';
+                }
+            }
+        }
+    </script>
+    <style>
+        .errorStyle {
+            outline: none;
+            border: 5px solid red;
+            box-shadow: 2px 2px 4px red;
+        }
+        .successStyle {
+            border: 5px solid green;
+            box-shadow: 2px 2px 4px green;
+        }
+        
+        .warnStyle {
+            border: 5px solid yellow;
+            box-shadow: 2px 2px 4px yellow;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <h2>Verify Password</h2>
+    <div class="form-group">
+        <label>Password</label>
+        <div>
+            <input onkeyup="VerifyPassword()" type="password" id="txtPwd" class="form-control" placeholder="4 to 15 chars with atlist 1 uppercase letter"> 
+        </div>
+    </div>
+</body>
+</html>
+
+-- Regular Expression
+--  Meter Tag HTML
+
+
+String reverse.
+
+<script>
+    function foo(){
+        var name = "javascript";
+        // var revName = name.split('').reverse().join('');
+        var revName = '';
+        for(var i = name.length-1; i >= 0; i-- ){
+            revName = revName+name[i];
+        }
+        console.log(revName);
+    }
+    foo();
+</script>
+
+
+
+<script>
+    function foo(name){
+        // var revName = name.split('').reverse().join('');
+        var revName = '';
+        for(var i = name.length-1; i >= 0; i-- ){
+            revName = revName+name[i];
+        }
+        console.log(revName);
+    }
+    var name = prompt();
+    foo(name);
+</script>
