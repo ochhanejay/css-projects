@@ -1,0 +1,273 @@
+
+    Date Type:
+    =======================================
+
+var product = {
+    name: "",
+    price: 0.0,
+    mfd: ?  
+}
+
+    mfd: "12-06-2021"   ->  Not date - it is string
+    Mfd: 12-06-2021     ->  Not valid
+
+Javascript: Date() constructor.
+
+    var mfd: new Date();
+
+The default "Date()" constructor will load the current date into memory.
+
+Custom date Format: "YY-MM-DD".
+
+    var mfd = new Date("YY-MM-DD");
+
+You can also configure the date value seperated with coma
+
+var Mfd = new Date(year, month, day, hours, minutes, seconds, miliseconds);
+
+Eg: 
+
+<script>
+    function f1(){
+        var product = {    
+            Name: "Milk",
+            price: 45000,
+            Mfd: new Date("2021-09-27")
+        }
+        document.write(`Name = ${product.Name} Manufacture = ${product.Mfd}`)
+    }
+    f1();
+
+</script>
+
+==============================================================
+        Date Object Methods to Read Date
+
+Method:                             Description
+
+getHours()  ->  24hr [0-23]
+
+getMinute() ->  [0-59]
+
+getSeconds()    ->  [0-59]
+
+getMiliseconds()    [0 to 999] // 1000 milisec = 1 sec
+
+getMonth()  ->  [0-11]
+
+getDay()    ->  [0-6]
+
+getYear()   ->  Depricated
+            1999    ->  99
+            2000    ->  100
+            2020    ->  120
+
+getFullYear()           ->  it returns full year number
+
+toDateString()          ->  Returns only date
+
+toLocaleDateString()    ->  Returns date in short format
+
+toLocaleTimeString()    ->  Returns time in short format
+
+toString()              ->  Date to String
+
+
+
+<script>
+    function f1(){
+        var product = {    
+            Name: "Milk",
+            price: 45000,
+            Mfd: new Date("2021-09-27")
+        }
+        document.write(`Name = ${product.Name} Manufacture = ${product.Mfd.toLocaleDateString()}`)
+    }
+    f1();
+
+</script>
+
+
+Ex:
+
+<script>
+    function f1(){
+        var product = {    
+            Name: "Milk",
+            price: 45000,
+            Mfd: new Date("2021-04-27")
+        }
+        var months = ['January', 'Feb', 'Mar', 'April', 'May'];
+        var weekdays = ['Sun', 'Mon', 'Tue', 'Wed']
+        document.write(`Name = ${product.Name} Manufacture = ${product.Mfd.toLocaleDateString()}`)
+        document.write(`<br> Manufactored Month: ${months[product.Mfd.getMonth()]} <br> WeekDay: ${weekdays[product.Mfd.getDay()]}
+        <br> MFD ${product.Mfd.getDate()} <br> MFD Year = ${product.Mfd.getFullYear()} 
+        <br> Time: ${product.Mfd.getTime()}
+        `)
+            
+    }   
+    f1();
+
+</script>
+
+=============================================================================
+            JavaScript Date Functions to set a new value
+
+setDate()               :    It sets the day of the month
+setFullYear()           :    It sets the year of the date
+// we don't have weekday 
+setHours()              :    It sets the hour number of date
+setMinutes()
+setSeconds()
+setMiliSeconds()
+setMonth()
+setTime()
+
+
+==============================================
+        JavaScript Timer Events
+    
+setInterval()
+setTimeout()
+clearInterval()
+clearTimeout()
+
+
+===================
+<script>
+    function GetTime() {
+        var now = new Date();
+        document.getElementById('timer').innerHTML = now.toLocaleTimeString();
+    }
+    
+    function f1(){
+            setInterval(GetTime, 1000);
+    }   
+    
+</script>
+<body onload="f1()">
+    <div align="center" id="timer">
+
+    </div>
+</body>
+==================================================================================================
+                        Operators:
+                    
+->  Operators is an object used to configure an expression in order to evaluate an value.
+->  Operator uses operands and a sign/operator to evaluate a value
+        a + b;
+    a is left operand 
+    b is right operand
+    + is a sign/operator
+->  Data is present in operands and value is evaludated according to the sign/operator defined.
+->  Based on the number of operands an operator can handle.
+
+    they are classified into 3 types
+
+    a)  Unary Operator:     one operand
+        a++, --a 
+    b)  Binary Operator:    two operand
+        a + b
+    c) Turnery Operator:    three operand
+        (condition) ? true: false;
+
+->  Based on the type of value an operator return they are further classfied into several types.
+
+    1.  Assginment Operator
+    2.  Comparision Operators
+    3.  Arithmatic Operators
+    4.  Bitwise Operators
+    5.  Logical Operators
+    6.  String Operator [Turnery]
+    7.  Special Operator
+    8.  Comma Operator
+    9.  Unary Operator
+    10. Relational Operators
+
+1.  Arithmatic Operator
+---------------------------------------
++
+-
+*
+/
+%   Modulus Devision Remainder
+**  Exponent [Power] - [new from ES5]
+++  Increment
+Decrement
+
+<script>
+    function f1(){
+        var x = 2;
+        var y = 3;
+        document.write(`X**Y = ${x**y} <br>`);
+        document.write(`Math.pow() = ${Math.pow(x,y)} <br>`);
+
+    }
+    
+    f1();
+</script>
+
+
+Ex: Increment and Decrement
+    ++ --
+    form: x++   =>  x = x + 1;
+    x++     Post Increment
+    x--     Post Decrement
+
+
+    x = 10;
+    y = x++;
+    O/P:    x=10 , y=11
+    O/P:    x=11, y=10;
+
+    POST: The value is first assigned to left operand and then the Increment/Decrement will happen.
+
+
+
+Eg:
+<script>
+    function f1(){
+        var x = 10;
+        var y = x++; // x=x+1
+        console.log(`X = ${x++}`)
+        console.log(`X = ${x}`)
+        if(x-- == 12) {
+            alert(`true x = ${x}`);
+        } else {
+            alert('false')
+        }
+    }
+    
+    f1();
+    </script>
+
+==========================================================
+    ++x Pre Increment
+    --x Pre Decrement
+
+    X = 10;
+    Y = ++X;
+
+    O/P:    X=11, Y=11
+=============================================================
+
+Addition Operator:  It is used to find the sum of given values.
+
+    x = 10
+    y = true
+
+    x + y ? 
+
+==================
+
+    string + string =   string
+    string + number =   string
+    string + boolean=   string
+
+
+    number + number = number
+    number + boolean = number
+    number + string = string
+
+    boolean + number = number
+    boolean + boolean = number    
