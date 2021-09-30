@@ -1,0 +1,32 @@
+        Statements in JavaScript
+    ==================================================
+
+Statements is used to control the execution flow. The Statements are classfied into various groups.
+
+Type                    Keyword
+=============================================
+Selection Statements:   if, else, switch-case-default
+
+Iteration and looping:  for, while, do-while
+
+Jump Statements:        break, continue, return
+
+Exception Handling:     try, catch, throw, finally
+
+    Selection Statements
+==========================================
+
+Selection Statements are used in decision making, they control the execution flow based on given condition.
+
+The "if" statement: it is a decision making statement it executes are set of Statements when condition
+    evalutes to true and another set of statements when it evalutes to false.
+
+Syntax: In this it continue to execute the statements only when condtion evalutes to true. There is no else block.
+
+    if(condition) {
+        // statement if true
+    }
+
+
+Ex: Collapse, Accordian, Modal, cards.
+
