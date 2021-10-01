@@ -1,0 +1,337 @@
+Simple if
+    if(condition) {
+        // block
+    } 
+    else {
+        // block      
+    }
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        var userDetails = [
+            {Username: "john", Password: "12345"},
+            {Username: "david", Password: "david12345"},
+            {Username: "rj", Password: "abcd#$@"}
+        ];
+        function LoginClick() {
+            var uname = document.getElementById('txtName').value;
+            var pwd = document.getElementById('txtPassword').value;
+            var msg = document.getElementById('msg');
+
+            for(var user of userDetails) {
+                if(user.Username === uname && user.Password === pwd) {
+                    location.href="home.html";
+                } else {
+                    msg.innerHTML = "Invalid Username / Password";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Amazon Shopping</h2>
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+            <button class="btn btn-danger">Home</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger" data-bs-target="#loginModal" data-bs-toggle="modal">Login</button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>User Login</h3>
+                    <div id="msg" class="text-danger"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label> Username</label>
+                        <div>
+                            <input type="text" class="form-control" id="txtName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Password</label>
+                        <div>
+                            <input type="password" class="form-control" id="txtPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="LoginClick()"class="btn btn-success">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+Ex: If i want to more clear: password worng ya username.
+
+Ex: Multi level condition
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        var userDetails = [
+            {Username: "john", Password: "12345"},
+            {Username: "david", Password: "david12345"},
+            {Username: "rj", Password: "abcd#$@"}
+        ];
+        function LoginClick() {
+            var uname = document.getElementById('txtName').value;
+            var pwd = document.getElementById('txtPassword').value;
+            var msg = document.getElementById('msg');
+
+            for(var user of userDetails) {
+                if(user.Username === uname) {
+                    if(user.Password === pwd) {
+                        location.href="home.html";
+                    } else {    
+                        msg.innerHTML = "Invalid Password";
+                        break;
+                    }
+                    
+                } else {
+                    msg.innerHTML = "Invalid Username";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Amazon Shopping</h2>
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+            <button class="btn btn-danger">Home</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger" data-bs-target="#loginModal" data-bs-toggle="modal">Login</button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>User Login</h3>
+                    <div id="msg" class="text-danger"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label> Username</label>
+                        <div>
+                            <input type="text" class="form-control" id="txtName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Password</label>
+                        <div>
+                            <input type="password" class="form-control" id="txtPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="LoginClick()"class="btn btn-success">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+Multiple Condition: more than one choice:   Username/Mobile
+
+    if(condition) {
+
+    }
+    else if(condition) {
+
+    } else {
+        // if all conditions are false
+    }
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        var userDetails = [
+            {Username: "john", Password: "12345", Mobile: "9856235623"},
+            {Username: "david", Password: "david12345", Mobile: "9856234512"},
+            {Username: "rj", Password: "abcd#$@", Mobile: "9898989898"}
+        ];
+        function LoginClick() {
+            var uname = document.getElementById('txtName').value;
+            var pwd = document.getElementById('txtPassword').value;
+            var msg = document.getElementById('msg');
+
+            for(var user of userDetails) {
+                if(user.Username === uname) {
+                    if(user.Password === pwd) {
+                        location.href="home.html";
+                    } else {    
+                        msg.innerHTML = "Invalid Password";
+                        break;
+                    }
+                    
+                } else if(user.Mobile === uname) {
+                    if(user.Password === pwd) {
+                        location.href="home.html";
+                    } else {    
+                        msg.innerHTML = "Invalid Password";
+                        break;
+                    }
+                } else {
+                    msg.innerHTML = "Invalid Username/Mobile"
+                }
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Amazon Shopping</h2>
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+            <button class="btn btn-danger">Home</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger" data-bs-target="#loginModal" data-bs-toggle="modal">Login</button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>User Login</h3>
+                    <div id="msg" class="text-danger"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label> Username / Mobile</label>
+                        <div>
+                            <input type="text" class="form-control" id="txtName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Password</label>
+                        <div>
+                            <input type="password" class="form-control" id="txtPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="LoginClick()"class="btn btn-success">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+===========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        var userDetails = [
+            {Username: "john", Password: "12345", Mobile: "9856235623"},
+            {Username: "david", Password: "david12345", Mobile: "9856234512"},
+            {Username: "rj", Password: "abcd#$@", Mobile: "9898989898"}
+        ];
+        function LoginClick() {
+            var uname = document.getElementById('txtName').value;
+            var pwd = document.getElementById('txtPassword').value;
+            var msg = document.getElementById('msg');
+
+            for(var user of userDetails) {
+                if(user.Username === uname || user.Mobile === unmae) {
+                    if(user.Password === pwd) {
+                        location.href="home.html";
+                    } else {    
+                        msg.innerHTML = "Invalid Password";
+                        break;
+                    }
+                    
+                } else {
+                    msg.innerHTML = "Invalid Username/Mobile"
+                }
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Amazon Shopping</h2>
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+            <button class="btn btn-danger">Home</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger" data-bs-target="#loginModal" data-bs-toggle="modal">Login</button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>User Login</h3>
+                    <div id="msg" class="text-danger"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label> Username / Mobile</label>
+                        <div>
+                            <input type="text" class="form-control" id="txtName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Password</label>
+                        <div>
+                            <input type="password" class="form-control" id="txtPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="LoginClick()"class="btn btn-success">Login</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+===================================
+debugger

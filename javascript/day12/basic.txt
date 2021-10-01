@@ -30,3 +30,208 @@ Syntax: In this it continue to execute the statements only when condtion evalute
 
 Ex: Collapse, Accordian, Modal, cards.
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <script>
+        function BillSummary() {debugger
+            var txtName = document.getElementById("txtName");
+            var txtMobile = document.getElementById('txtMobile');
+
+            var optBurger = document.getElementById("optBurger");
+            var optRoller = document.getElementById('optRoller');
+
+            var optFries = document.getElementById("optFries");
+            var optKrusher = document.getElementById('optKrusher');
+
+            var customerName = txtName.value;
+            var mobileNumber = txtMobile.value;
+            var mealName = "";
+            var addOnName = "";
+            var mealCost = 0;
+            var addOnCost = 0;
+            var total = 0;
+
+            if(optBurger.checked) {
+                mealName = optBurger.value;
+                mealCost = 150;
+            }
+            if(optRoller.checked) {
+                mealName = optRoller.value;
+                mealCost = 120;
+            }
+
+            if(optFries.checked) {
+                addOnName = optFries.value + "<br>";
+                addOnCost = 60;
+                mealCost = mealCost + addOnCost;
+            }
+            debugger
+            if(optKrusher.checked) {
+                addOnName += optKrusher.value;
+                addOnCost = 40;
+                mealCost = mealCost + addOnCost;
+            }
+
+            total = mealCost;
+            
+            document.getElementById('lblName').innerHTML = customerName;
+            document.getElementById('lblMobile').innerHTML = mobileNumber;
+            document.getElementById('lblMeal').innerHTML = mealName;
+            document.getElementById('lblAdOn').innerHTML = addOnName;
+            document.getElementById('lblTotal').innerHTML = '&#8377;'+total;
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <img src="area.jpg" width="100%">
+    <div class="accordian" id="kfcmenu">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header" id="customerInfo">
+                <h2>
+                    <button class="btn btn-lg btn-danger" data-bs-target="#collapseCustomer" data-bs-toggle="collapse">Customer Info</button>
+                </h2>
+            </div>
+            <div id="collapseCustomer" class="collapse show" data-bs-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Name</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Mobile</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" id="txtMobile" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header" id="mealInfo">
+                <h2>
+                    <button class="btn btn-lg btn-danger" data-bs-target="#collpaseMeal" data-bs-toggle="collapse">Meal Info</button>
+                </h2>
+            </div>  
+            <div id="collpaseMeal" class="collapse show" data-bs-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="chicken-burger-recipe.jpg" class="card-img-top" height="500">
+                                <div class="card-body">
+                                    <h2>OMG Burder</h2>
+                                </div>
+                                <div class="card-footer">
+                                    <h2>
+                                        <input type="radio" name="meal" value="OMG Burger" id="optBurger">&#8377; 150/-      
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="chicken-burger-recipe.jpg" class="card-img-top" height="500">
+                                <div class="card-body">
+                                    <h2>OMG Roller</h2>
+                                </div>
+                                <div class="card-footer">
+                                    <h2>
+                                        <input type="radio" name="meal" value="OMG Roller" id="optRoller">&#8377; 120/-      
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-header" id="adOnInfo">
+                <h2>
+                    <button class="btn btn-lg btn-danger" data-bs-target="#collpaseAdOn" data-bs-toggle="collapse">Ad Ons</button>
+                </h2>
+            </div>  
+            <div id="collpaseAdOn" class="collapse show" data-bs-parent="#kfcmenu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="french-fries-.jpg" class="card-img-top" height="500">
+                                <div class="card-body">
+                                    <h2>French Fries</h2>
+                                </div>
+                                <div class="card-footer">
+                                    <h2>
+                                        <input type="checkbox" value="French Fries" id="optFries">&#8377; 60/-      
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="brownie.jpg" class="card-img-top" height="500">
+                                <div class="card-body">
+                                    <h2>Krusher Brownie</h2>
+                                </div>
+                                <div class="card-footer">
+                                    <h2>
+                                        <input type="checkbox" value="Krusher Brownie" id="optKrusher">&#8377; 80/-      
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-center">
+        <button onclick="BillSummary()" class="btn btn-outline-danger"  data-bs-target="#summaryModal" data-bs-toggle="modal"> Place Order</button>
+    </div>
+    <div class="modal" id="summaryModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Bill Summery</h2>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>Customer Name</dt>
+                        <dd id="lblName"></dd>
+                        <dt>Mobile</dt>
+                        <dd id="lblMobile"></dd>
+                        <dt>Selected Meal</dt>
+                        <dd id="lblMeal"></dd>
+                        <dt>AD-ON</dt>
+                        <dd id="lblAdOn"></dd>
+                        <dt>Total Amount</dt>
+                        <dd id="lblTotal"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

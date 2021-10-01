@@ -241,7 +241,7 @@ Eg:
     f1();
     </script>
 
-==========================================================
+===========================================================
     ++x Pre Increment
     --x Pre Decrement
 
@@ -263,11 +263,121 @@ Addition Operator:  It is used to find the sum of given values.
     string + string =   string
     string + number =   string
     string + boolean=   string
-
+    string + null   =   string
 
     number + number = number
     number + boolean = number
     number + string = string
+    number + null   =   number: x = 10, y = null: x+y = 10
 
     boolean + number = number
-    boolean + boolean = number    
+    boolean + boolean = number  
+    boolean + string = string
+    boolean + null = number: 
+
+    null + null     =   number: 0
+
+    Undefined:  Anything with Undefined type will return NaN(Not a number) except string type.
+    String uses concatination.
+
+    string + Undefined  =   string
+    number + Undefined  =   NaN
+    boolean + Undefined =   NaN
+    Undefined + Undefined = NaN
+
+==============================================================================================
+
+            Assginment Operator
+            ===================
+
+=       Assign
++=      Add an assign: x = 10; x = x + 2; (x += 2)
+-=      Substract and assign
+*=      Multiply and Assign
+/=      Divide and Assign
+%=      Modulus division and Assign
+**=     Exponent and Assign
+=================================================================================
+            Comparision Operators
+        =============================
+
+==      Equal to
+===     Identical Equal
+!=      Not Equal
+!==     Not Identical Equal
+>       Greater than
+<       Less than
+>=      Grater than or Equal
+<=      Less than oor Equal
+
+All Comparision operators return boolean true or false
+
+"=="    can compare value of two different types. it can also 
+        implicitly convert the value.
+    
+<script>
+    function f1(){
+        var x = 10;
+        var y = "10"; 
+        document.write(`x==y?  ${x==y}`); // true
+    }
+    f1();
+</script>
+
+
+"===="  is compare only the values of same type. it can't implicitly convert the values.
+        if different types of value are compare then it always return false.
+    
+ <script>
+    function f1(){
+        var x = 10;
+        var y = "10"; 
+        document.write(`x===y?  ${x===y}`); // false
+    }
+    f1();
+</script>   
+
+=======================================================================================================
+                Logical Operators:  Logical gates
+
+&&  Logical AND
+!!  Logical OR
+!   Logical NOT
+
+        (condition) && (condition) : true only when: both condition true
+            1           1           :   1
+            1           0           :   0
+            0           1           :   0
+            0           0           :   0
+        
+        (condition) || (condition)  :   true when any one condition true
+            1           1           :   1
+            1           0           :   1
+            0           1           :   1
+            0           0           :   0
+
+        var x = true
+        var y = !x; // false
+==============================================================================
+                Bitwise Operators:  
+        &   AND
+        |   OR
+        ~   NOT
+        ^   XOR
+        <<  left shift
+        >>  right shift
+        >>> right shift
+==================================================================================
+            Special Operators
+        
+1.  Ternery Operators
+2.  typeof
+3.  instanceof operator
+4.  delete operator
+5.  in operator
+6.  of operator
+7.  new operator
+         
+
+void operator
+
