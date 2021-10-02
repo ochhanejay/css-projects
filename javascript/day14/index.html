@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script>
+        var categories = ['Select a Category', 'Electronics', 'Fashion'];
+        var electronics = ['Select a Electronic Product', 'Earpods', 'JBL Speaker'];
+        var fashion = ['Select a Fashion Product', 'Shirt', 'Jeans'];
+
+        var data = [
+            {Name:"Earpods", Price:4500.55, Photo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU"},
+            {Name:"JBL Speaker", Price:6000.55, Photo:"https://www.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwf687ad0f/JBL_Flip4_Black_Hero.png"},
+            {Name:"Shirt", Price:2000.33, Photo:"https://w7.pngwing.com/pngs/972/557/png-transparent-blue-dress-shirt-t-shirt-dress-shirt-dress-shirt-tshirt-blue-image-file-formats-thumbnail.png"},
+            {Name:"Jeans", Price:3000.44, Photo:"https://5.imimg.com/data5/XS/OK/MY-33004082/stylish-mens-jeans-500x500.jpg"}
+        ];
+
+        function bodyload() {
+            for(var item of categories) {
+                var option = document.createElement('option');
+                option.text = item;
+                option.value = item;
+                document.getElementById('lstCategories').appendChild(option);
+            }
+        }
+        function CategoryChanged() {
+            var categoryName = document.getElementById('lstCategories').value;
+            var lstProduct = document.getElementById('lstProduct');
+            switch(categoryName) {
+                case "Electronics":
+                lstProduct.innerHTML = "";
+                    for(var item of electronics) {
+                        var option = document.createElement('option');
+                        option.text = item;
+                        option.value = item;
+                        lstProduct.appendChild(option);
+                    }       
+                break;
+                case "Fashion":
+                lstProduct.innerHTML = "";
+                    for(var item of fashion) {
+
+                        var option = document.createElement('option');
+                        option.text = item;
+                        option.value = item;
+                        lstProduct.appendChild(option);
+                    }       
+                break;
+                default:
+                    lstProduct.innerHTML = '';
+                break;
+            }
+
+        }
+        
+        var searchResult = [];
+            function ProductChanged() {
+                var productName = document.getElementById('lstProduct').value;
+                searchResult = data.filter(function(item){return item.Name==productName});
+                document.getElementById('prodName').innerHTML = searchResult[0].Name;
+                document.getElementById('prodImage').src = searchResult[0].Photo;
+                document.getElementById('prodPrice').innerHTML = searchResult[0].Price;
+            }   
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="row" >
+        <div class="col-3">
+            <h2>Amazon Shopping</h2>
+            <div class="form-group">
+                <label>Select Category</label>
+                <div>
+                    <select onchange="CategoryChanged()" id="lstCategories" class="form-control">
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Select a Product</label>
+                <div>
+                    <select onchange="ProductChanged()" id="lstProduct" class="form-control">
+
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label>Product Details</label>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 id="prodName"></h2>
+                    </div>
+                    <div class="card-body">
+                        <img width="200" height="200" id="prodImage">
+                    </div>
+                    <div class="card-footer">
+                        <h2 id="prodPrice"></h2>
+                        <button class="btn btn-danger">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+
+        </div>
+        <div class="col-3">
+            <button class="btn btn-success">
+                <span id="itemCount">[1]</span>
+                <span class="fa fa-shopping-cart"></span>
+                Your Cart Items
+            </button>
+        </div>
+    </div>
+</body>
+</html>

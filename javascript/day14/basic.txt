@@ -1,0 +1,15 @@
+Switch: it is a condtional statement that executes only the block that matches with the
+            given condition.
+
+Syntax: 
+        switch(condition) {
+            case value:
+            statements;
+            break;
+            case value:
+            statement;
+            break;
+            default:
+            statement;
+            break;
+        }

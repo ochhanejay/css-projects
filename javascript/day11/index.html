@@ -1,8 +1,19 @@
+
 <script>
-    function f1(){
-        var x = 10;
-        var y = "10"; 
-        document.write(`x>=y?  ${x>=y}`)
+    function CreatePhoto() {
+        var pic  = new Image();
+        pic.src = "../day12/brownie.jpg";
+        pic.height = 100;
+        pic.width =100;
+        document.getElementById('container').appendChild(pic)
+
     }
-    f1();
 </script>
+
+<body>
+    <button onclick="CreatePhoto()">Create Image</button>
+    <br>
+    <div id="container">
+
+    </div>
+</body>

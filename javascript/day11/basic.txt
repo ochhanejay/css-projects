@@ -258,7 +258,7 @@ Addition Operator:  It is used to find the sum of given values.
 
     x + y ? 
 
-==================
+================================================================
 
     string + string =   string
     string + number =   string
@@ -325,7 +325,7 @@ All Comparision operators return boolean true or false
 </script>
 
 
-"===="  is compare only the values of same type. it can't implicitly convert the values.
+"==="  is compare only the values of same type. it can't implicitly convert the values.
         if different types of value are compare then it always return false.
     
  <script>
@@ -370,14 +370,112 @@ All Comparision operators return boolean true or false
 ==================================================================================
             Special Operators
         
-1.  Ternery Operators
+1.  Ternery Operators [?:]
+    It is similar to simple condition "if..else"
+
+    (condition) ? statement_true : statement_false;
+
 2.  typeof
-3.  instanceof operator
-4.  delete operator
-5.  in operator
-6.  of operator
-7.  new operator
+    It returns the data type of value stored in memory reference.
+
+3.  instanceof operator:    it checks wheather the given object is derived from specific
+                            parent type or class and retun boolean true or false.
+    
+
+    <script>
+    class Employee {
+
+    }
+    function f1() {
+        var cities = new Array();
+        var emp = new Employee();
+
+        document.write(`Cities is from Array: ${cities instanceof Array}`)
+    }
+    f1();
+    </script>
+
+4.  delete operator:    it is used to delete any property of an object. you can't delete properties
+                        of an built-in object of JavaScript as they are readonly.
+                
+                                                
+                        <script>
+                            function f1(){
+                                var product = {
+                                    Name: 'TV',
+                                    price: 45000
+                                }
+                                delete product.price;
+                                debugger
+                                document.write(`${product} :: ${product.price}`)
+                            }
+                            f1();
+                        </script>
+
+
+
+5.  in operator:    It is used to search for a property in any object and return true of proeprty found.
+
+
+                    <script>
+                        function f1(){
+                            var product = {
+                                Name: 'TV',
+                                price: 45000
+                            }
+                            delete product.price;
+                            if('price' in product ) {
+                                document.write(`${product.Name} :: ${product.price}`)
+                            } else {
+                                document.write(`${product.Name}`)
+                            }
+                            
+                        }
+                        f1();
+                    </script>
+
+6.  of operator:    it is used to read all values of a collection over iteration and return values. [for]
+
+
+                    <script>
+                        function f1(){
+                            var product = ['TV', 'Mobile', 'Shoe']
+                            for(var item of product) {
+                                document.write(`${item} <br>`)
+                            }
+                            
+                        }
+                        f1();
+                    </script>
+
+
+7.  new operator:   It is dynamic memory allocating operator: // oops concept
+                    It allocates memory for any object and loads the members into memory.
+
+            Syntax: 
+                    var now = new Date();
+                    var names = new Array()
+
+
+                    <script>
+                        function CreatePhoto() {
+                            var pic  = new Image();
+                            pic.src = "../day12/brownie.jpg";
+                            pic.height = 100;
+                            pic.width =100;
+                            document.getElementById('container').appendChild(pic)
+
+                        }
+                    </script>
+
+                    <body>
+                        <button onclick="CreatePhoto()">Create Image</button>
+                        <br>
+                        <div id="container">
+
+                        </div>
+                    </body>
          
 
-void operator
+void operator:  
 

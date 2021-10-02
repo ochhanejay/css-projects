@@ -25,6 +25,7 @@
             var addOnCost = 0;
             var total = 0;
 
+
             if(optBurger.checked) {
                 mealName = optBurger.value;
                 mealCost = 150;
@@ -47,6 +48,9 @@
             }
 
             total = mealCost;
+
+            total = total + (taxIndiaOrNot == true) ? (18/total)*100: (36/total)*100;
+
             
             document.getElementById('lblName').innerHTML = customerName;
             document.getElementById('lblMobile').innerHTML = mobileNumber;
