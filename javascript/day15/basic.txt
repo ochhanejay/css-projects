@@ -1,0 +1,108 @@
+Loops and iterations:
+
+-   Looping is the process of executing a set of stateemtns repeatedly until the given condition satisfied.
+    You can create loops by using "for, while, do-while"
+
+Syntax: 
+    for(var i = 0; (condtion); i++/i-- (incr/decr)) {
+
+    }
+
+Syntax:
+    while(condition) {
+        statements;
+        incr/decr;
+    }
+
+Syntax:
+    do {
+        // statement;
+        // incr/decr
+    } while(condition);
+
+============================================================================
+-   Iteration is the process of accessing elements from a collection in sequential order.
+-   Doesn't require any condition, initialization and counter.
+    1)  for..in
+    2)  for..of
+
+Ex: Looping / Loops
+
+Ex: OL>LI
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var data = [
+                    {Category: 'Electronics', Products: ['Earpods', 'JBL Speaker']}, 
+                    {Category: 'Fashion', Products: ['Shirt', 'Jeans']}
+                ]
+        function bodyload() {
+            var lstItems = document.getElementById('lstItems');
+            for(var i = 0; i < data.length; i++) {
+                var categoryItem = document.createElement('li');
+                categoryItem.innerHTML = data[i].Category;
+                lstItems.appendChild(categoryItem);
+                for(var j = 0; j < data[i].Products.length; j++) {
+                    var ul = document.createElement('ul');
+                    var li = document.createElement('li');
+                    li.innerHTML = data[i].Products[j];
+                    ul.appendChild(li);
+                    categoryItem.appendChild(ul);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>Amazon Shopping</h2>
+    <ol id="lstItems">
+
+    </ol>
+</body>
+</html>
+
+
+Ex: Table Dynamic
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var data = [
+            {Name: 'Speanker', Price: 4500},
+            {Name: 'Shirt', Price: 2300},
+            {Name: 'Shoe', Price: 5400}
+        ]
+        function load() {
+            var tbody = document.getElementById('tbody');
+            for(var i = 0; i < data.length; i++){
+                var tr = document.createElement('tr');
+                for(var j = 0; j < 1; j++){
+                    var td1 = document.createElement('td');
+                    var td2 = document.createElement('td');
+                    td1.innerHTML = data[i].Name;
+                    td2.innerHTML = data[i].Price;
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                }
+                tbody.appendChild(tr);
+            }
+
+        }
+    </script>
+</head>
+<body onload="load()">
+    <h2>Amazon Shopping</h2>
+    <table width="400" border="1">
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>
