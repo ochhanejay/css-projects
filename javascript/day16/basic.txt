@@ -1,0 +1,216 @@
+                JavaScript Events
+
+-   Events is a message sent by sender to its subcriber in order to notify the change.
+
+-   <button onclick="f1()">
+
+        onclick="f1()":     ->  Event Handler
+        onclick             ->  Event
+
+-   Several elements or events can point towards the same function
+
+FAQ: Is it possible that one function can be used by multiple event or elements?
+A.   Yes
+
+FAQ: How to manage different actions with same function?
+     Single function should work for different controls with different functionality.
+A.  You can manage by using Event arguments. JavaScript event can handle 2 arguments.
+
+    a)  this
+    b)  event
+
+    <button onclick="Database(this, event)">Insert</button>
+    this    ->  current object properties
+    event   ->  onclick: properties
+
+This example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function DataBase(currentObj){
+            switch(currentObj.name) {
+                case "btnInsert":
+                document.write('Record Inserted');
+                break;
+                case "btnUpdate":
+                document.write('Record Updated');
+                break;
+                case "btnDelete":
+                document.write('Record Deleted');
+                break;
+            }      
+        }
+    </script>
+</head>
+<body>
+    <button name="btnInsert" onclick="DataBase(this)">Insert</button>
+    <button name="btnUpdate"onclick="DataBase(this)">Update</button>
+    <button name="btnDelete" onclick="DataBase(this)">Delete</button>
+</body>
+</html>
+
+
+
+
+link-   ctrl + click will open link
+Q: How we know user pressed ctrl or not with click
+
+Event Ex:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function ShowAlert(e) {debugger
+            if(e.ctrlKey == true) {
+                alert('Success with CTRL key')
+            } else {
+                alert('Please user CTRL key')
+            }
+        }
+    </script>
+</head>
+<body>
+    <div onclick="ShowAlert(event)" style="width: 300px; height: 200px; background-color: darkcyan;">
+        User Ctrl + Click for alert
+    </div>
+</body>
+</html>
+
+
+=====================================================================================
+                    Event Handling in JavaScript
+
+JavaScript Browser Events
+1.  Timer Events
+2.  Key Event
+3.  Mouse Events
+4.  Miscelaneous Events
+
+
+                    Timer Events
+
+setTimeout():   It is a timer event, which is used to set delay time for the task.
+                so that the task will me mantained in memory for specific duration.
+                After the time interval it is released.
+
+clearTimeout(): It will remove the task from memory before it is completed and rendered.
+
+
+Note:   "setTimeout" will execute the function only once. If you want to repeat continously
+        then you can define "setInterval"
+
+setInterval():  It can load and perform the task continously at regular time intervals.
+
+clearInterval(): It will clear from memory.
+
+                        setTimeout()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function msg1() {
+            document.getElementById('msg').innerHTML = 'Hello !';
+        }
+        function msg2() {
+            document.getElementById('msg').innerHTML = 'How Are your !';
+        }
+        function msg3() {
+            document.getElementById('msg').innerHTML = 'Welcome to javascript !';
+        }
+        function bodyload() {
+            setTimeout(msg1, 2000);
+            setTimeout(msg2, 5000); // 3sec
+            setTimeout(msg3, 9000); // 4sec
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="msg"  style="width: 200px; height: 100px; border: darkgrey; background-color: darkcyan;">
+        
+    </div>
+</body>
+</html>
+                        clearTimeout()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function msg1() {
+            document.getElementById('msg').innerHTML = 'Hello !';
+        }
+        function msg2() {
+            document.getElementById('msg').innerHTML = 'How Are your !';
+        }
+        function msg3() {
+            document.getElementById('msg').innerHTML = 'Welcome to javascript !';
+        }
+        function bodyload() {
+            window.m1 = setTimeout(msg1, 2000);
+            window.m2 = setTimeout(msg2, 5000); // 3sec
+            window.m3 = setTimeout(msg3, 9000); // 4sec
+        }
+        function CancelMsg() {
+            clearTimeout(m2)
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="msg"  style="width: 200px; height: 100px; border: darkgrey; background-color: darkcyan;">
+        
+    </div>
+    <button onclick="CancelMsg()">Cancel Message  - 2</button>
+</body>
+</html>
+
+
+
+                            setInterval
+
+<script>
+    function ShowTime() {
+        var time = new Date();
+        document.getElementById('msg').innerHTML = time.toLocaleTimeString();
+    }
+    function bodyload(){
+        setInterval(ShowTime,1000);
+    }
+</script>
+
+<body onload="bodyload()">
+    <div id="msg">
+
+    </div>
+</body>
+
+                            clearInterval
+
+<script>
+    function ShowTime() {
+        var time = new Date();
+        document.getElementById('msg').innerHTML = time.toLocaleTimeString();
+    }
+    function bodyload(){
+        window.timer = setInterval(ShowTime,1000);
+    }
+    function StopClick(){
+        clearInterval(timer);
+    }
+    function StartClick() {
+        bodyload();
+    }
+</script>
+
+<body onload="bodyload()">
+    <div id="msg">
+
+    </div>
+    <div>
+        <button onclick="StartClick()">Start</button>
+        <button onclick="StopClick()">Stop</button>
+    </div>
+</body>
