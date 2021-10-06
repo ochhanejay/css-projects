@@ -1,0 +1,346 @@
+                    Key Event:
+
+onkeyup:    specifies actions to perform when keyup on any element.
+
+onkeydown:  specifies actions to perform when keydown on any element.
+
+onkeypress: specifies actions to perform when you finish using a key.
+
+
+
+Eg: Check username if it is already taken.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        var data = [
+            {Username: 'john'},
+            {Username: 'john123'},
+            {Username: 'john_tech'},
+            {Username: 'david'}
+        ]
+        function verifyUserName() {
+            var txtName = document.getElementById('txtName').value;
+            if(txtName.length < 4) {
+                return;
+            }
+            var userMsg = document.getElementById('userMsg');
+            for(var item of data){
+                if(txtName == item.Username) {
+                    userMsg.innerHTML = "User Name Taken - Try Again";
+                    userMsg.className = 'text-danger';
+                    break;
+                } else {
+                    userMsg.innerHTML = 'User Name Available';
+                    userMsg.className = 'text-success';
+                }
+            }
+            // line of code
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Register User</h2>
+        <div class="form-group">
+            <label>Username</label>
+        <div>
+            <input onkeyup="verifyUserName()" type="text" id="txtName" class="form-control">
+            <span id="userMsg"></span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
+===================================================================================
+Eg: Password - capital letter typed or not.
+
+Event Properties:
+
+keyCode     ]   
+charCode    ]   A=65 - Z = 90, a=97 - z=122
+which       ]
+shiftKey
+ctrlKey
+altKey
+
+
+Eg: 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script>
+        function checkCaps(e) {debugger
+            var userPass = document.getElementById('userPass');
+            if(e.keyCode>=65 && e.keyCode<=90) {
+                userPass.style.display='block';
+            } else {
+                userPass.style.display='none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Register User</h2>
+        <div class="form-group">
+            <label>Password</label>
+        <div>
+            <input onkeypress="checkCaps(event)" type="text" id="txtPass" class="form-control">
+            <span style="display: none;" id="userPass" class="text-warning">
+                CAPS IS ON
+            </span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+====================================================================================
+Mouse Events:
+
+onmouseover:
+onmouseout
+onmousedown
+onmouseup
+onmousemove
+
+
+eg: onmouseover, onmouseout
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            transition: 2s;
+            opacity: 0.5;
+        }
+        img:hover {
+            transform: scale(2);
+            transition: 2s;
+            opacity: 1.0;
+            
+        }
+    </style>
+
+    <script>
+        var products = [
+            {Name:"Earpods", Photo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU"},
+            {Name:"JBL Speaker", Photo:"https://www.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwf687ad0f/JBL_Flip4_Black_Hero.png"},
+            {Name:"Shirt", Photo:"https://w7.pngwing.com/pngs/972/557/png-transparent-blue-dress-shirt-t-shirt-dress-shirt-dress-shirt-tshirt-blue-image-file-formats-thumbnail.png"},
+            {Name:"Jeans", Photo:"https://5.imimg.com/data5/XS/OK/MY-33004082/stylish-mens-jeans-500x500.jpg"}
+        ];
+        function bodyload() {
+            var gallery = document.getElementById('gallery');
+            for(var item of products){
+                var img  = new Image();
+                img.height = 100;
+                img.width = 100;
+                img.src = item.Photo;
+                gallery.appendChild(img)
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()" class="container-fluid">
+    <h4>Mouse Events</h4>
+    <marquee onmouseover="this.stop()" onmouseout="this.start()">
+        <div id="gallery">
+
+        </div>
+    </marquee>
+</body>
+</html>
+
+========================================================================
+onmousemove
+
+Eg:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function GetPosition(e) {
+            var flag = document.getElementById('flag');
+            flag.style.position = 'fixed';
+            flag.style.left = e.clientX + "px";
+            flag.style.top = e.clientY + "px";
+        }
+    </script>
+</head>
+<body onmousemove="GetPosition(event)">
+    <div style="height: 500px;">
+        
+    </div>
+    <img id="flag" src="india-india-flag.gif" width="30" height="30">
+    
+</body>
+</html>
+
+==================================================================================
+onmousedown, onmouseup
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function ON(){
+            document.getElementById('bulb').src = 'https://toppng.com/uploads/preview/light-bulb-png-transparent-light-bulb-115628766421gdl0skp2k.png';
+        }
+        function OFF(){
+            document.getElementById('bulb').src = 'https://w7.pngwing.com/pngs/859/425/png-transparent-light-bulb-illustration-incandescent-light-bulb-lamp-bulb-candle-product-light-thumbnail.png';
+        }
+    </script>
+</head>
+<body onmousemove="GetPosition(event)">
+    <img width="200" height="200" onmousedown="ON()" onmouseup="OFF()" id="bulb" src="https://w7.pngwing.com/pngs/859/425/png-transparent-light-bulb-illustration-incandescent-light-bulb-lamp-bulb-candle-product-light-thumbnail.png">    
+    <p>Press hold down mouse button to ON buld</p>
+</body>
+</html>
+
+==================================================================================
+Miscelaneous Events
+
+blur: Actions to perform when element lost focus  
+
+focus: Action to perform when element get focus
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function ShowMessage(){
+            var msg = document.getElementById('msg');
+            msg.innerHTML = 'Name in block letters';
+        }
+        function HideMessage() {
+            document.getElementById('msg').innerHTML = '';
+            var txtName = document.getElementById('txtName');
+            txtName.value = txtName.value.toUpperCase();
+        }
+    </script>
+</head>
+<body >
+    Name:
+    <input onfocus="ShowMessage()" onblur="HideMessage()" type="text" id="txtName" placeholder="Name in Block Letter">
+    <span id="msg"></span>
+</body>
+</html>
+
+=====================
+
+
+oncut     ]
+oncopy    ]   Actions to perform on cut, copy & paste
+onpaste   ]
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function Cut(){
+            document.getElementById('msg').innerHTML = 'Removed Element & Copied to clipboard: Cut'
+        }
+        function Copy(){
+            document.getElementById('msg').innerHTML = 'Copied Element Clipboard: Copy'
+        }
+        function Paste(){
+            document.getElementById('msg').innerHTML = 'Inserted from clipboard';
+        }
+    </script>
+</head>
+<body >
+    Name:
+    <input oncut="Cut()" oncopy="Copy()" onpaste="Paste()" type="text" id="txtName" placeholder="Name in Block Letter">
+    <span id="msg"></span>
+</body>
+</html>
+
+==========================================
+FAQ: How to disable cut, copy, paste, selection, rightclick in page?
+
+oncontextmenu:  it specifies actions on right click
+onselectionstart:   action on selection start
+onselect:           actions on select
+
+
+A.  You can disable the event bu using "return false"
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function Cut(){
+            document.getElementById('msg').innerHTML = 'Removed Element & Copied to clipboard: Cut'
+        }
+        function Copy(){
+            document.getElementById('msg').innerHTML = 'Copied Element Clipboard: Copy'
+        }
+        function Paste(){
+            document.getElementById('msg').innerHTML = 'Inserted from clipboard';
+        }
+    </script>
+</head>
+<body oncontextmenu="return false" onselect="return false" onpaste="return false" oncut="return false" oncopy="return false">
+    Name:
+    <input type="text" id="txtName" placeholder="Name in Block Letter">
+    <span id="msg"></span>
+</body>
+</html>
+
+=============================================================================================
+onchange
+onclick
+ondbclick
+
+//window.open('src')
+-----------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #box {
+            justify-content: center;
+            margin: auto;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function zoom(){
+            var img = document.getElementById('pic');
+            var txtRange = document.getElementById('txtRange').value;
+            img.width = txtRange * 100;
+            img.height = txtRange * 100;
+        }
+    </script>
+</head>
+<body class="container-fluid" >
+    <select>
+            
+    </select>
+    <div id="box">
+        100%<input id="txtRange" type="range" min="1" onchange="zoom()" value="1" max="5">500%
+    </div>
+    <div id="box">
+        <img id='pic' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyNx8VFTaRBvTQ0HcBGcpkihbuhVBp9VtCA&usqp=CAU" width="100" height="100">
+    </div>
+</body>
+</html>
