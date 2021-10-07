@@ -1,0 +1,232 @@
+                        javascript browser object
+
+-   browser Object Model    -   BOM
+-   document object Model   -   DOM
+
+
+-   javascript browser object
+
+        1.  window
+        2.  location
+        3.  navigator
+        4.  history
+        5.  document
+
+
+Window
+
+Member:             Description
+
+open()              :   it opens any file or url in a new window
+close()             :   it can close the window
+print()             :   it can print the window
+alert()
+confirm()
+prompt()
+
+
+Syntax: 
+        window.open(url, title, 'features');
+        window.close()
+        window.print()
+
+<body>
+    <h2>JavaScript Borwser Objects</h2>
+    <button onclick="window.open('../day12/brownie.jpg', 'Brownie', 'width=500 height=300')">Open - Image</button>
+    <button onclick="window.close()">Close</button>
+    <button onclick="window.print()">Print</button>
+</body>
+
+====================================================
+
+location:   it is an javascript object which provides the properties and methods that are used to knwo the 
+            client location details.
+
+
+
+host:       it returns the server name op IP address
+path:       it return the current path i.e file & folder
+href:       it return the complete URL, it also allows to redirect to url
+port:       current port number
+protocol:   current protocol
+search:     it returns the querystring
+hash:       hash # id reference
+reload:     it reloads the page
+
+
+
+Eg1:
+
+
+<script>
+    function bodyload() {
+        document.getElementById('lblHost').innerHTML = location.host;
+        document.getElementById('lblProtocol').innerHTML = location.protocol;
+        document.getElementById('lblUrl').innerHTML = location.href;
+    }
+</script>
+
+
+
+<body onload="bodyload()">
+    <h2>Location Details</h2>
+    <button onclick="location.reload()">Refresh</button>
+    <dl>
+        <dt>Server / IP Address</dt>
+        <dd id="lblHost"></dd>
+        <dt>Protocol</dt>
+        <dd id="lblProtocol"></dd>
+        <dt>URL</dt>
+        <dd id="lblUrl"></dd>      
+
+    </dl>
+</body>
+
+
+================
+location.search:
+
+
+<script>
+    function bodyload() {
+        document.getElementById('lblHost').innerHTML = location.host;
+        document.getElementById('lblProtocol').innerHTML = location.protocol;
+        document.getElementById('lblUrl').innerHTML = location.href;
+    }
+    function GetQueryString() {
+        document.write(location.search+'<br>')
+        var name = location.search.substring(location.search.indexOf('=')+1);
+        document.write(name);
+    }
+</script>
+
+
+
+<body onload="bodyload()">
+    <div>
+        <form>
+            Name: <input type="text" name="txtName">
+            <button type="submit">Submit</button>
+            <button onclick="GetQueryString()">Get Query String</button>
+        </form>
+    </div>
+</body>
+
+
+================================================================================
+Note: Location 'href' attribute allow to redirect to any specific url
+
+
+
+<body>
+    <div>
+            <button onclick="location.href='../day17/index.html'">Home</button>
+    </div>
+</body>
+
+
+=======================================================================
+Navigator: it is a javascript object which provides set of properties and methods that are
+            used to access client browser details.
+
+
+
+appName:        It is used to know the browser family [NetScape]
+
+userAgent:      supported platform
+
+platform:       current platform
+
+language:       browser language
+
+plugins[]       it returns the collection of plugins, supported on ur browser
+
+mimeTypes[]     files supported on server
+
+cookieEnabled:  it check whether cookies enabled or not.
+
+
+
+=================================
+
+
+<script>
+    function bodyload() {
+        document.getElementById('lblApp').innerHTML = navigator.appName;
+        document.getElementById('lblLang').innerHTML = navigator.language;
+        document.getElementById('lblPlatform').innerHTML = navigator.platform;
+        document.getElementById('lblCookie').innerHTML = (navigator.cookieEnabled)?'Cookie Enabled': 'Please enable the cookies';
+    }
+</script>
+
+
+
+<body onload="bodyload()">
+    <h2>Navigator</h2>
+    <dl>
+        <dt>Browser Family</dt>
+        <dd id="lblApp"></dd>
+        <dt>Browser Language</dt>
+        <dd id="lblLang"></dd>
+        <dt>Platform</dt>
+        <dd id="lblPlatform"></dd>      
+        <dt>Cookie Enabled</dt>
+        <dd id="lblCookie"></dd>
+    </dl>
+</body>
+
+
+=========================
+Ex: check plugins
+
+<script>
+    for(var plugin of navigator.plugins){
+        document.write(plugin.name + '<br>')
+    }
+</script>
+
+====================
+Ex: mimeTypes
+
+<script>
+    for(var mime of navigator.mimeTypes){
+        document.write(mime.type + '<br>')
+    }
+</script>
+
+==========================================================================
+History:    it is a javascript object used to get browser history.
+
+length: Total count of pages in browser history
+forward():  moves forward
+back(): moved back
+go():   goto any specific page in history
+
+
+<script>
+
+    document.write(`total no of pages in browser history: ${history.length}`)
+</script>
+
+<body>
+    <div>
+        <button onclick="history.back()">Back</button>
+        <button onclick="go(19)">Page</button>
+        
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

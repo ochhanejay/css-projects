@@ -344,3 +344,8 @@ ondbclick
     </div>
 </body>
 </html>
+
+Task:   1)  Dropdown of images
+        2)  select image show below
+        3)  range work
+        4)  double click on image in new window [window.open(src)]
