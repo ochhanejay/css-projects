@@ -1,0 +1,318 @@
+OOP IN JavaScript
+
+-   JavaScript is not OOP language
+-   JavaScript supports some features of OOP
+-   OOP was introduced in early 1967 by Johan Olay, Kristian Nygaard and formulated with 'SUMULA 67'
+-   Code Reusablility concerns.
+-   Later in 1970's "Trygve" introduced a framework called "MVC - Modal View Controller" and
+    formulated with "Small Talk".
+-   Code Seperation concerns.
+
+Features of OOP
+
+-   Code Reusablility
+-   Code Seperation
+-   Code Extensiblity
+-   Code Security
+-   Loosely Coupled
+
+Drawback of OOP
+
+-   Uses more memory
+-   Very complex
+-   slow
+-   will not directly interect with hardware services.
+
+==============================================================================================
+                    Classes in JavaScript
+
+-   Class is OOP is a program template / blueprint with data and logic
+-   Data is stored in properties and logic in methods
+-   Classes introduced into javascript from ES5 [ECMASCript 2015]
+-   Classes in javascript as defines as 'Special functions'
+-   Classes are defined in 2 ways
+
+    a)  Class Declaration
+    b)  Class Expression
+
+Class Declaration:
+-   it defines a clas with a name
+-   it comprises of members, which are access by using the class name or its instance/object.
+-   class className {
+
+    }    
+
+class Expression 
+-   it defines a class without name.
+-   it is assgined to a reference memory and accessed by using reference memory.
+    var classRef = class {
+
+    }
+
+Class Declaration loads class into memory automatically on page load.
+Class Expression loads class into memory only when requested.
+
+==========================================================================================
+                    Class Members
+                    =============
+
+A class comprises various members like
+-   Constructor
+-   Properties / data
+-   Methods
+-   Accessors
+
+Properties: comprises of data
+Methods:    Define logis
+
+<script>
+    class Product {
+        Name: "Samsung TV";
+        Price: 4500.54;
+    }
+</script>
+
+Property
+    Name = "TV"
+Variable
+    var Name = "TV"
+
+Difference pending.
+=====================       Methods
+Methods in a class can be directly defined with mehtod signature
+    MethodName(params) {
+
+    }
+
+-   The members of a class are accessible with in the clas by using "this" keyword.
+    and outside the class by using an instance of class.
+
+<script>
+    class Product {
+        Name = "Samsung TV";
+        Price =  4500.54;
+        Qty = 2;
+        Total() {
+            return this.Price * this.Qty;
+        }
+        Print() {
+            document.write(`Name = ${this.Name} <br> Price = ${this.Price} <br> Qty = ${this.Qty} 
+                            <br> Total = ${this.Total()} <hr>`)
+        }
+    }
+
+    // How to access
+    var tv = new Product;
+    tv.Print();
+
+    var shoe = new Product;
+    shoe.Name = 'Nike Casuals';
+    shoe.Price = 3000;
+    shoe.Qty = 2;
+    shoe.Print();
+</script>
+
+================================================================================
+Constructor: Non-Parameterized
+
+- It is a special type of method that execute automatically when the memory is allocated for class.
+- It is an anonymous method i.e method without name
+- we can assign default values
+- 
+<script>
+    class Database {
+        constructor() {
+            document.write(`Conencted Successfully..`);
+        }
+        Insert(username) {
+            document.write(`for ${username} Record is Inserted <br>`);
+        }
+    }
+
+    let oracle = new Database;
+    oracle.Insert('john');
+</script>
+==============================
+Constructor: Parameterized
+
+-   A constructor can be Parameterized
+-   The parameter value is  passed into constructor while allocating memory for the class.
+-   Parameters allow to modify the functionality
+<script>
+    class Database {
+        constructor(dbName) {
+            document.write(`${dbName} Conencted Successfully.. <br>`);
+        }
+        Insert(username) {
+            document.write(`for ${username} Record is Inserted <hr>`);
+        }
+    }
+
+    let oracle = new Database('Oracle');
+    oracle.Insert('john');
+    let mongo = new Database('MongoDB');
+    mongo.Insert('david');
+</script>
+
+============================================================
+                    JavaScript Method / Functions
+
+-   Function:       Always intended to return a value.
+-   Method:         Will not return a value
+-   Procedure:      May or May not return a value.
+
+JavaScript will allow to return a value or not return value according to the user requirement.
+
+-   class is defined with methods, which doesn't requuired 'function keyword'
+-   if you are configuring outisde the class then you have to use the keyword 'function'
+
+    function functionName(params) {
+
+    }
+    function Print(a,b) {
+
+    }
+
+    Declaration:    function Print(a,b);
+    Signature:      Print(a,b)
+    Definition:     {}
+
+-   Function is called at any location by using Signature
+-   The parameters defined in Declaration are known as 'Formal Parameters'
+-   The value you pass in the function call are known as 'Actual Parameters' or 'Arguments'
+
+        function print(a,b) ->  a,b:    are Formal Parameters
+        print(10,20)        ->  10,20   are actual Parameters
+
+
+Eg:
+<script>
+    function Welcome(){
+        document.write(`Welcome Fucntion <br>`);
+    }
+
+    class Demo {
+        Hello() {
+            Welcome();
+            document.write(`Hello Method <br>`);
+        }
+    }
+
+    let obj = new Demo();
+    obj.Hello();
+</script>
+
+
+
+Functions Parameters:
+-   Why a function needs paramters?
+-   A parameter allows to change the functionality as per situation.
+
+Eg1:
+<script>
+    class ArithmaticLogic {
+        Addition(a,b) {
+            return a+b;
+        }
+    }
+
+    var add1 = new ArithmaticLogic;
+    alert(add1.Addition(10,20));
+    var add2 = new ArithmaticLogic;
+    alert(add2.Addition(20,30));
+</script>
+
+Eg2:
+<script>
+    function PrintNumber(startWith, endWith){
+        for(var i = startWith; i <= endWith; i++){
+            document.write(`${i} <br>`);
+        }
+    }
+
+    class Demo {
+        Print() {
+            PrintNumber(1,5);
+            PrintNumber(2,8);
+        }
+    }
+
+    let obj = new Demo();
+    obj.Print();
+</script>
+=========================
+-   Every parameter in function is mandatory
+
+Eg:
+<script>
+    function Product(name, price) {
+        if((typeof name) == 'number') {
+            document.write('Not Allowed: Should be String only')
+        } else {       
+            if(price == undefined) {
+                document.write(`${name} <br>`)    
+            } else {
+                document.write(`${name} <br>  ${price} <br>`)
+            }
+        }
+        
+    }
+
+    class Demo {
+        Print() {
+            Product(123, 2234);
+        }
+    }
+
+    let obj = new Demo();
+    obj.Print();
+</script>
+
+====================================
+-   Every Parameter in function is mandatory. you have to check with 'undefined' type if parameter    
+    is not defined.
+-   You have to verify the data type of parameter value passed.
+
+-   ES5 introduced 'Rest' Parameters
+-   A Rest parameter allow multiple values to pass dynamically into one formal paramter
+Eg: 
+
+<script>
+    function PrintList(...collection) {
+        for(var item of collection){
+            document.write(`${item} <br>`)
+        }
+    }
+
+    PrintList('Tv', 'Mobile');
+</script>
+
+
+Note:   Every function can have only one rest paramters.
+        Rest paramters must be the last paramter
+
+
+Error Eg: Rest parameter must be last formal parameter
+
+<script>
+    function PrintList(...collection, number) {
+        for(var item of collection){
+            document.write(`${item} <br>`)
+        }
+    }
+
+    PrintList('Tv', 'Mobile', 23423);
+</script>
+
+
+Eg: 
+<script>
+    function PrintList(number, ...collection) {
+        for(var item of collection){
+            document.write(`${item} <br>`)
+        }
+        document.write(number);
+    }
+
+    PrintList(2134, 'Tv', 'Mobile');
+</script>
