@@ -1,0 +1,24 @@
+<script>
+    class ES5{
+        Print(){
+            document.write('Print method in Super class <br>')
+        }
+    }
+
+    class ES6{
+        Print() {
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    class JavaScript extends ES6, ES5 {
+        Print(){
+            super.Printf();
+            super.Print();
+            document.write(`**** Print method in Javascript class`)
+        }
+    }
+
+    let obj = new JavaScript;
+    obj.Print();
+</script>

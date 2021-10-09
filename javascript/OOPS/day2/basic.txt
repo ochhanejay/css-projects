@@ -1,0 +1,232 @@
+                                        Array as Parameter
+
+<script>
+    function PrintList(list) {
+        for(var item of list) {
+            document.write(`${item} <br>`)
+        }
+    }
+
+    PrintList(['TV', 'Mobile']);
+    PrintList(new Array('Shoe', 'Watch', 'TV'));
+    let categories = ['Electronics', 'Footwear']
+    PrintList(categories);
+    
+</script>
+
+- Array arguments are passed into Array Parameter by using 
+    [], Array()
+
+
+                                        Function as Parameter ***
+
+-   Function are used as Parameters to handle call back.
+-   Call back is a mechanism where function executes automatically according to the state.
+
+<script>
+    let path = 'home.html'
+    function Ajax(success, failure) {
+        if(path == 'home.html') {
+            document.write(success());
+        } else {
+            document.write(failure());
+        }
+
+    }
+
+    Ajax(function(){
+        return "Ajax Request Success";
+    }, function(){
+        return "Ajax Request Failed";
+    });
+</script>
+
+
+                                        Function with Return value
+                                        ==========================
+
+-   To create a function that can be used as expression
+-   Expression can take input of values and return a result by handling specific operation.
+-   A function can return both primitive and non-primitive types.
+
+<script>
+    function reverseStr(name) {
+        let revName = name.split('').reverse().join('');
+        return revName;
+    }
+
+
+    var name = 'javascript';
+    var revName = reverseStr(name);
+    document.write(revName);
+
+    var name1 = 'web';
+    var revName1 = reverseStr(name1);
+    document.write(revName1)
+
+</script>
+
+function reverseStr(name) {
+        return name.split('').reverse().join('');
+}
+
+
+Math.max()
+Ex: our method to count maximum:
+
+<script>
+    function maximum(num1, num2, num3) {
+        if(num1 > num2 && num1 > num3) {
+            return num1;
+        } else if(num2 > num3) {
+            return num2;
+        } else {
+            return num3;
+        }
+    }
+
+
+    document.write(maximum(10,20,5))
+
+</script>
+
+
+Ex: minimun, maximum
+
+<script>
+    var max = -Infinity;
+    function maximum(...document) {
+        for(var item of document) {
+            if(item > max) {
+                max = item;
+            }
+        }
+        return max;
+    }
+    var min = Infinity;
+    function minimun(...document) {
+        for(var item of document) {
+            if(item < min) {
+                min = item;
+            }
+        }
+        return min;
+    }
+
+    document.write(maximum(10, 5, 23, 100, 200, 60, 70, 32));
+    document.write(minimun(-234, -10, -5, -23, -100, -200, -60, -70, -32))
+
+</script>
+
+=====================================================================================
+                    Function Recursion
+                =========================
+
+Drawbacks:  
+    Callback Hell
+    Inversion of Control
+Generators
+=====================================================================================
+Code Reusablity in JavaScript OOP
+===========================================
+-   it is the key feaure of OOP
+-   You can handle by using
+    a)  Aggregation
+    b)  Ineheritance
+-   Aggregation allow to access the code of one class in another by using  "obj-to-obj" reference
+-   Without defining relation netween classes you can access members of one class in another
+-   it is often known as "HAS-A-RELATION"
+
+<script>
+    class Super{
+        Print(){
+            document.write('Print method in Super class <br>')
+        }
+    }
+
+    class Derived {
+        
+        Print() {
+            let obj = new Super();
+            obj.Print();
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    let obj = new Derived;
+    obj.Print();
+</script>
+
+===============================================
+Ineheritance:
+
+-   It is a technique that allwos to configure relationship between classes
+-   It is refered as "IS-A-RELATION".
+-   A new class can extend existing class.
+
+-   Exisitng class is lnown as Super class / Parent class
+-   New class is known as derived class / Child class
+-   The relation is defined by using 'extends' keyword
+-   Super class members are accessed by using 'super' keyword
+
+
+<script>
+    class Super1{
+        Print(){
+            document.write('Print method in Super class <br>')
+        }
+    }
+
+    class Derived extends Super1{
+        
+        Print() {
+            super.Print();
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    let obj = new Derived;
+    obj.Print();
+</script>
+
+======================
+
+-   Ineheritance is supported for classes in following hierarchies
+
+    1) Single Ineheritance
+    2) Multi level Ineheritance
+
+<script>
+    class ES5{
+        Print(){
+            document.write('Print method in Super class <br>')
+        }
+    }
+
+    class ES6 extends ES5{
+        
+        Print() {
+            super.Print();
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    class JavaScript extends ES6 {
+        Print(){
+            super.Print();
+            document.write(`Print method in Javascript class`)
+        }
+    }
+
+    let obj = new JavaScript;
+    obj.Print();
+</script>
+
+Note: Multiple Ineheritance is not supported.
+
+
+
+
+
+
+
