@@ -1,0 +1,385 @@
+
+Note: Multiple Ineheritance is not supported.
+
+-   The constructor of derived class must have a super call.
+-   if constructor are defined in super and derived class always super class constructor
+    will have to execute then followed by derived class constructor.
+-   
+
+<script>
+    class ES6{
+        constructor() {
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    class JavaScript extends ES6 {
+        constructor(){
+            document.write(`**** Print method in Javascript class`)
+        }
+    }
+
+    let obj = new JavaScript;
+</script>
+
+Error:  Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+
+<script>
+    class ES6{
+        constructor() {
+            document.write('Print method in derived class <br>');
+        }
+    }   
+
+    class JavaScript extends ES6 {
+        constructor(){
+            super();
+            document.write(`**** Print method in Javascript class`)
+        }
+    }
+
+    let obj = new JavaScript;
+</script>
+
+
+-   Derived class constructor must have a super call
+
+
+FAQ: Why multiple Ineheritance is not supported?
+
+     class derived extends super1, super2 {
+
+     } // invalid
+
+A:  Due to constructor deadlock
+=============================================================================
+                    Polymorphism
+
+-   Poly:       Many
+-   Morphos:    Forms
+-   It is a behaviour given for components so that one component can transform with multiple behaviour
+    according to state and situation.
+-   In OOP poly morphism allows a single base class object to use the memory of multiple derived class
+
+-   A single nase clas object can use the memory of multiple derived classes.
+-   single base class object can work different type of derived classes.
+
+<script>
+    class Employee {
+        firstName='as';
+        lastName;
+        designation;
+        print() {
+            document.write(`${this.firstName}  ${this.lastName}  ${this.designation} <hr>`)
+        }
+    }
+    class Developer extends Employee {
+        print() {
+            super.firstName = 'Raj';
+            super.lastName = 'Kumar';
+            super.designation = 'Developer';
+            super.print();
+        }
+    }
+    class Admin extends Employee {
+        print() {
+            super.firstName = 'John';
+            super.lastName = 'cor';
+            super.designation = 'Admin';
+            super.print();
+        }
+    }
+    class Manager extends Employee {
+        print() {
+            super.firstName = 'Tom';
+            super.lastName = 'Hanks';
+            super.designation = 'Manager';
+            super.print();
+        }
+    }
+
+    let employees = new Array(new Developer(), new Admin(), new Manager());
+    for(let emp of employees){
+        emp.print();
+    }
+</script>
+
+=========================================================================================
+                                    Lambda Function
+                                    ===============
+
+-   I provides a short hand method for writing functions.
+-   <script>
+        var f1 = () => {};
+    </script>
+    ()  ->  function parameter
+    =>  ->  definition
+    {}  ->  statements
+
+Eg: 
+
+
+<script>
+    var f1 = () => document.write('Lambda Function');
+    /*
+        var f1 = function() {
+            document.write('Lambda Funciton')
+        }
+    */
+    f1();
+</script>
+
+
+Eg: more than one argument
+
+<script>
+    var addition = (a,b) => a+b;
+    /*
+        var addition = function() {
+            return a+b;
+        }
+    */
+    document.write(addition(10,20));
+</script>
+
+Eg: Single Argument
+
+<script>
+    var double = a => a*a;
+    /*
+        var double = function(a) {
+            return a*a;
+        }
+    */
+    document.write(double(10));
+</script>
+
+=================================
+Eg: Multiple statements
+
+<script>
+    var double = a => {
+                                    var result = a*a;
+                                return result
+                        };
+    /*
+        var double = function(a) {
+                        var result = a*a;
+                        return result
+        }
+    */
+    document.write(double(10));
+</script>
+
+======================================================================
+Eg: filter
+
+Without Lambda:
+
+<script>
+    var products = [
+        {name: 'TV', category: 'Electronics'},
+        {name: 'Shirt', category: 'Fashion'},
+        {name: 'Mobile', category: 'Electronics'}
+    ]
+
+    var result = products.filter(function(prd) {
+        return prd.category=='Electronics';
+    });
+
+    for(let item of result){
+        document.write(`${item.name}  ${item.category} <hr>`)
+    }
+</script>
+
+With Lambda
+
+<script>
+    var products = [
+        {name: 'TV', category: 'Electronics'},
+        {name: 'Shirt', category: 'Fashion'},
+        {name: 'Mobile', category: 'Electronics'}
+    ]
+
+    var result = products.filter(prd => prd.category=='Electronics');
+
+    for(let item of result){
+        document.write(`${item.name}  ${item.category} <hr>`)
+    }
+</script>
+
+
+without:    products.filter(function(prd) {
+        return prd.category=='Electronics';
+    });
+
+with:       products.filter(prd => prd.category=='Electronics');
+
+//Task: Pending
+
+
+============================================================================
+Data Structure Earlier
+-   Array
+-   Object
+-   JSON
+
+                    New Data Structure in JavaScript [ES6]
+
+-   Map
+-   Set
+
+
+-   Map is a new data Structure introduces in Es6, which allows to configure a collecion
+    of key and value reference.
+
+Syntax:
+    var map = new Map();
+
+Proerties/method                                        Description
+========================================================================
+set()                           -   Adds a new value
+get()                           -   Gets the value by using key reference.
+has()                           -   Verify whether given entity or entry is available.
+delete()                        -   to delete a value
+size                            -   to get the length
+clear()                         -   remove all from Map
+keys()                          -   retuns all keys
+values()                        -   return all values
+entries                         -   both key values
+
+
+Syntax - Create MAP:
+Way#1
+<script>
+    let map = new Map();
+    map.set('txttName', 'Samsung Tv');
+    map.set('txtPrice', 2000.9);
+    map.set('lstCity', 'Delhi');
+</script>
+
+Way#2
+
+<script>
+    let map = new Map()
+        .set('txttName', 'Samsung Tv')
+        .set('txtPrice', 2000.9)
+        .set('lstCity', 'Delhi');
+</script>
+============================
+Syntax: Access Map Values
+
+        map.get('txtName');
+
+1)
+<script>
+    let product = new Map()
+        .set('txtName', 'Samsung Tv')
+        .set('txtPrice', 2000.9)
+        .set('lstCity', 'Delhi');
+    
+    document.write(product.get('txtName'));
+</script>
+
+2) Get all keys or value or entries [of operator]
+
+i) access keys
+<script>
+    let product = new Map()
+        .set('txtName', 'Samsung Tv')
+        .set('txtPrice', 2000.9)
+        .set('lstCity', 'Delhi');
+    
+    for(let item of product.keys()){
+        document.write(`${item} <br>`)
+    }
+</script>
+
+ii) access value
+<script>
+    let product = new Map()
+        .set('txtName', 'Samsung Tv')
+        .set('txtPrice', 2000.9)
+        .set('lstCity', 'Delhi');
+    
+    for(let item of product.values()){
+        document.write(`${item} <br>`)
+    }
+</script>
+
+iii) access entries
+
+<script>
+    let product = new Map()
+        .set('txtName', 'Samsung Tv')
+        .set('txtPrice', 2000.9)
+        .set('lstCity', 'Delhi');
+    
+    for(let item of product.entries()){debugger
+        document.write(`${item} <br>`); // txtName, Samsung Tv
+    }
+</script>
+
+===============================================================
+
+Complex:
+
+<script>
+    let product = new Map([
+        [1, ['Samsung Tv', 45000, 'Delhi']],
+        [2, ['Nike Casuals', 2300, 'Hyd']]
+    ])
+    
+    for(let item of product.entries()){
+        document.write(`${item} <br>`)
+    }
+</script>
+
+============================================================
+Syntax: Delete Entry
+
+product.delete(2);
+product.clear() //  delete all
+
+===================================================================================
+
+                        'SET'
+                        =====
+
+-   It is similar to Map but contains only collection of keys.
+-   It is simillar to Array but provides methods to set and get the values
+
+add()           set a new key / insert a new data
+has()
+delete()
+clear()
+
+<script>
+    var keys = new Set(['txtName', 'txtPrice',123]);
+    for(var item of keys) {
+        document.write(item + '<br>');
+    }
+</script>
+
+
+<script>
+    var keys = new Set;
+    keys.add(23);
+    keys.add('demo');
+    for(var item of keys) {
+        document.write(item + '<br>');
+    }
+</script>
+
+============================================================================
+
+Task 1: Bodyload: Prin all categories and print all products from all the categories.
+        on category select: show the product which are belong to that selected category only.
+
+Task2:  Bodyload: Print some of the products, 
+        then add the product: "Add Product"
+        : show the newly added product and old ones.
+        : restrict produc don't repeat: alert('produc already exist');
+
+
+============================================================================

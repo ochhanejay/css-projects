@@ -224,7 +224,10 @@ Ineheritance:
 
 Note: Multiple Ineheritance is not supported.
 
-
+-   The constructor of derived class must have a super call.
+-   if constructor are defined in super and derived class always super class constructor
+    will have to execute then followed by derived class constructor.
+-   
 
 
 
