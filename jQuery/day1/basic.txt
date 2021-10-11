@@ -1,0 +1,243 @@
+                        jQuery
+                    ===============
+
+-   jQuery is javascript library.
+-   it comprises of pre-defiend functions to handle various ineractions.
+-   write less and do more
+-   jQuery is used in DOM manipulaions, CSS manipulation, effects and animations, utilities, ajax, JSON parsion.
+-   it reduces compatibility issue and Cross-Browser.
+
+1) Download jQuery for your project.
+>   npm install jquery
+
+2) Link jquery core file to your web page
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+3) Invoke jQuery library
+
+    <script>
+        $(function(){
+
+        })
+    </script>
+
+    or
+
+    <script>
+        $(document).ready(function(){
+
+        })
+    </script>
+
+    : this is like bodyload automatically.
+
+============
+Ex:1
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+           $('h2').text('welcome to jQuery'); 
+           alert(1);
+        });
+    </script>
+
+</head>
+
+<body>
+    <h2></h2>
+</body>
+
+=================================================================================
+                        jQuery Selectors
+
+
+TagName                 it refers to HTML tag name
+
+                        $('p')
+                        $('h1')
+                        $('td')
+
+id                      it refers to unique id for tag
+
+                        <div id="msg">
+                        <input type='text' id='txtName'>
+                        $('#msg')
+                        $('#txtName')
+
+class  
+                        <div class='effects'>
+
+                        $('.effects')
+
+Note: you can use all Selectors of CSS
+$('ul > li')
+==================================================
+        -               jQuery HTML and CSS functions
+
+1) html()                  it is similar to innerHTML
+2) text()                  it is similar to innerText
+
+Eg:1
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+           $('#msg').text('This is desplyaed using ID');
+           $('.effects').text('This is displayed using Class Name');
+        });
+    </script>
+
+</head>
+
+<body>
+    <p id="msg"></p>
+    <div class="effects"></div>
+</body>
+
+===========================================================
+Eg2:
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var userName = prompt('Enter name');
+            if(userName == null) {
+                $('#msg').text('You  cancelled');
+            } else {
+                $('#msg').text(`hello ! ${userName}`)
+            }
+            
+        });
+    </script>
+
+</head>
+
+<body>
+    <p id="msg"></p>
+</body>
+
+============================================================
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var userName = prompt('Enter name');
+            $('#msg').text(`hello ! <b><i>${userName}</i><b>`);
+            $('#msg').html(`hello ! <b><i>${userName}</i><b>`)
+            
+        });
+    </script>
+
+</head>
+
+<body>
+    <p id="msg"></p>
+</body>
+==============================================================
+3. val()                i gets the value of HTML element.
+                        it can also set  value into html
+
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#txtName').val('john');
+            var username = $('txtName').val();
+            $('#lblName').html(username);
+        })
+    </script>
+
+</head>
+
+<body>
+    Name: <input type="text" id="txtName">
+    <br>
+    Hello ! <span id="lblName"> </span>
+</body>
+
+=========================================================================
+onclick example:
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#btnSubmit').click(function(){
+                $('#lblName').html($('#txtName').val());
+            });
+        })
+    </script>
+
+</head>
+
+<body>
+    Name: <input type="text" id="txtName">
+    <button id="btnSubmit">Submit</button>
+    <br>
+    Hello ! <span id="lblName"> </span>
+</body>
+
+====================================================================
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#btnSubmit').click(()=>{
+                $('#lblName').html($('#txtName').val());
+                $('#lblCity').html($('#lstCities').val());
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <dl>
+            <h2>Register</h2>
+            <dt>Name</dt>
+            <dd><input type="text" id="txtName"></dd>
+            <dt>City</dt>
+            <dd>
+                <select id="lstCities">
+                    <option>Delhi</option>
+                    <option>Hyd</option>
+                </select>
+            </dd>
+            <button id="btnSubmit">Submit</button>
+        </dl>
+    </div>
+    <div>
+        <h2>Details</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd id="lblName"></dd>
+            <dt>City</dt>
+            <dd id="lblCity"></dd>
+        </dl>
+    </div>
+</body>
+
+======================================================
+4. css()
+
+        css('cssPropertyName', 'value');
+        css({'property':'value', 'property':'value'});
+
+
+
