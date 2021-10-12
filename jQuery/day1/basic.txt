@@ -234,10 +234,26 @@ onclick example:
 </body>
 
 ======================================================
-4. css()
+4. css(): it applies a CSS effect to HTML element dynamically
 
         css('cssPropertyName', 'value');
         css({'property':'value', 'property':'value'});
 
 
 
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $('h2').css({
+                'background-color':'darkcyan',
+                'color': 'white',
+                'text-align':'center'
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Register</h2>      
+</body>

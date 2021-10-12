@@ -1,0 +1,106 @@
+append()        :   Add element into current parent element
+
+appendTo()      :   add element to specific parent
+
+.each()         :   it is a iterator to read key and value from collection
+
+attr()          :   It binds the data to attribue of element
+
+Ex: append()
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var categories = ['Electrocnic', 'Footwear', 'Fashion'];
+            $.each(categories, function(key,value){
+                $('#olCategories').append(`<div>${value}</div>`)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h2>Append to OL</h2>
+    <ol id="olCategories">
+
+    </ol>
+</body>
+
+
+Ex: appendTo()
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var categories = ['Electrocnic', 'Footwear', 'Fashion'];
+            $.each(categories, function(key,value){
+                $(`<option>${value}</option>`).appendTo('#lstCategories');
+            });
+        })
+    </script>
+</head>
+<body>
+    <h2>Append to Dropdown</h2>
+    <select id="lstCategories">
+
+    </select>
+</body>
+
+=============================================================
+Ex: appendTo complex
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var data = [
+                {Name: 'TV', Price: 4500, PhotoSrc: '../1.jpg'},
+                {Name: 'Mobile', Price: 3423, PhotoSrc: '../2.jpg'}    
+            ];
+            $.each(data, function(key,value){
+                $(`<tr><td>${value.Name}</td><td>${value.Price}</td><td><img src='${value.PhotoSrc}' width='150' height='150'></td></tr>`).appendTo('#tbody');
+            });
+        })
+    </script>
+</head>
+<body>
+    <h2>Append to Table</h2>
+    <table border="1" width='300'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+
+===================================================================
+attr()          :   It binds the data to attribue of element
+
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#pic').attr('src', '../../javascript/Screenshot from 2021-09-08 21-33-50.png');
+        })
+    </script>
+</head>
+<body>
+    <img id="pic" width="100" height="100">
+</body>
+
+=========================================================================
+
+https://www.w3schools.com/cssref/css_selectors.asp
+
+https://www.youtube.com/results?search_query=css+child+selectors+

@@ -1,40 +1,16 @@
 <head>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
-
     <script>
         $(function(){
-            $('#btnSubmit').click(()=>{
-                $('#lblName').html($('#txtName').val());
-                $('#lblCity').html($('#lstCities').val());
-            });
+            $('h2').css({
+                'background-color':'darkcyan',
+                'color': 'white',
+                'text-align':'center'
+            })
         });
     </script>
-
 </head>
 
 <body>
-    <div>
-        <dl>
-            <h2>Register</h2>
-            <dt>Name</dt>
-            <dd><input type="text" id="txtName"></dd>
-            <dt>City</dt>
-            <dd>
-                <select id="lstCities">
-                    <option>Delhi</option>
-                    <option>Hyd</option>
-                </select>
-            </dd>
-            <button id="btnSubmit">Submit</button>
-        </dl>
-    </div>
-    <div>
-        <h2>Details</h2>
-        <dl>
-            <dt>Name</dt>
-            <dd id="lblName"></dd>
-            <dt>City</dt>
-            <dd id="lblCity"></dd>
-        </dl>
-    </div>
+    <h2>Register</h2>      
 </body>

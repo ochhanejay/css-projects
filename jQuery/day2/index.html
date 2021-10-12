@@ -1,0 +1,36 @@
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function(){
+            var data = [
+                {Name: 'TV', Price: 4500, PhotoSrc: '../1.jpg'},
+                {Name: 'Mobile', Price: 3423, PhotoSrc: '../2.jpg'}    
+            ];
+            $.each(data, function(key,value){
+                $(`<tr><td>${value.Name}</td><td>${value.Price}</td><td><img src='${value.PhotoSrc}' width='150' height='150'></td></tr>`).appendTo('#tbody');
+            });
+            $('#myTable').DataTable();
+        })
+    </script>
+</head>
+<body>
+    <h2>Append to Table</h2>
+    <table border="1" width='300' id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
