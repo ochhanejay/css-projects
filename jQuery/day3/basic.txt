@@ -1,0 +1,85 @@
+            Jquery AJAX with API
+            ====================
+
+- Database      :   Mysql, sqlserver, oracle, mongoDB etc..
+- Server side   :   JSP, PHP, ASP, NodeJS, python
+- Middleware    :   Jsx, Express
+- Client side   :   Javascrip, Jquery, Angular, React
+
+
+
+Fake API: https://jsonplaceholder.typicode.com/
+
+: AJAX is used to calll the API
+
+GET request:            Data get
+POST request:           Data send
+DELETE request :        Data delete
+PUT request:            Update data
+etc...
+==================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $('#getdata').click(function(){
+                $.ajax({
+                    url: 'https://jsonplaceholder.typicode.com/users'
+                }).done(function(data){
+                    $.each(data, function(key,value){
+                        $(`<tr><td>${value.username}</td><td>${value.email}</td></tr>`).appendTo('tbody');
+                    })
+                }).fail(function(){
+                    alert(`Something went wrong`);
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="getdata">Get data</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>    
+</body>
+</html>
+
+================================================================================
+                            Jquery UI
+                        ==================
+
+-   It provides
+1)  Interactions
+2)  Widgets
+3)  Effects
+4)  Utilities
+
+
+1)  Download jQueryUI
+
+Download it and place it into your project direcory
+
+        jQueryUI
+            -jquery-ui.css
+            -jquery-ui.js
+
+Note: Jquery ui requires jquery core library
+
+Jqeruy UI Interactions demos;
+
+-   Draggable
+-   Resizable
+-   Selectable
+-   Sortable
+
+
