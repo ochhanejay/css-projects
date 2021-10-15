@@ -1,0 +1,142 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <script src="https://releases.jquery.com/git/jquery-3.x-git.min.js"> </script>
+    <style>
+        button{
+            background-color: grey;
+
+        }
+        button:hover{
+            background-color:white;
+        }
+    </style>
+    <script>
+        var data = [{
+        		Name: 'Samsung',
+        		Price: 1000
+        	},
+        	{
+        		Name: 'Mobile',
+        		Price: 2000
+        	}
+        ];
+
+        function editProduct(productName) {
+        	debugger
+        	let findProduct = data.filter(function(item) {
+        		return item.Name == productName;
+        	});
+        	$('#productname').val(findProduct[0].Name);
+        	$('#productprice').val(findProduct[0].Price);
+        	$('#btnadd').html('Update Product');
+
+        }
+
+        function deleteProduct(productName) {
+        	for (let i = 0; i < data.length; i++) {
+        		if (data[i].Name === productName) {
+        			// delete data[i];    // Note: it will delete the element from array but not change the index of other elements, will use splice
+        			data.splice(i, 1);
+        			bodyload();
+        			break;
+        		}
+        	}
+        }
+
+        function bodyload() {
+        	$('#tablebody').html("");
+        	$.each(data, function(key, value) {
+        		debugger
+        		$(`<tr><td>${value.Name}</td> <td>${value.Price}</td> <td><button onclick="editProduct('${value.Name}')">✏️</button></td> <td><button  onclick="deleteProduct('${value.Name}')">❌</button></td> </tr>`).appendTo('#tablebody');
+        	});
+
+        }
+        $(function() {
+        	bodyload();
+
+        	$('#btnadd').click(() => {
+        		let result = {};
+        		var findmatch = [];
+        		debugger
+        		var name = $('#productname').val();
+        		var price = $('#productprice').val();
+
+        		if ($('#btnadd').html() === 'Update Product') {
+        			for (let i = 0; i < data.length; i++) {
+        				if (name === data[i].Name) {
+        					data[i].Name = name; // no meaning
+        					data[i].Price = price;
+
+        					bodyload();
+        					$('#productname').val('');
+        					$('#productprice').val('');
+        					$('#btnadd').html('Add Product');
+        					break;
+        				}
+        			}
+        		} else {
+        			findmatch = data.filter(function(item) {
+        				return item.Name == name
+        			});
+        			if (findmatch.length > 0 || name == "") {
+        				alert("Please Input Product Name But Not Same")
+        				$('#productname').val("");
+        				$('#productprice').val("");
+        				return;
+        			} else if (price == "") {
+        				alert("Please Input Product Price");
+        				return;
+        				x
+        			} else {
+        				result.Name = name;
+        				result.Price = price;
+        				$('#productname').val("");
+        				$('#productprice').val("");
+        				data.push(result); // relation established between data and result [memory address]
+        				bodyload();
+        			}
+
+        		}
+        	});
+        });
+    </script>
+    </head>
+    <body class="container-fluid">
+        <div class="row">
+            <div class="col-4 border" style="padding: 20px;">
+                <h1>Register</h1>
+                <div class="form-group ">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Product Name" id="productname">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" class="form-control"placeholder="$" id="productprice">
+                </div>
+                <button   id="btnadd" class="btn btn-primary form-control" style="margin-top: 20px;" >Add Product</button>
+                
+            </div>
+            <div class="col-1">
+                
+            </div>
+            <div class="col-7">
+                <h1>Detail</h1>
+                <table class="table  table-striped">
+                    <thead class="table-dark">
+                      <td><strong> Product Name</strong></td>
+                      <td> <strong> Price </strong></td>
+                      <td> <strong> Edit </strong></td>
+                      <td> <strong> Delete </strong></td>
+                    </thead>
+                    <tbody id="tablebody" >
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </body>
+</html>

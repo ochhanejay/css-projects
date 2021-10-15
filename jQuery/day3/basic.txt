@@ -83,3 +83,25 @@ Jqeruy UI Interactions demos;
 -   Sortable
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../jquery-ui-1.13.0/jquery-ui.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../jquery-ui-1.13.0/jquery-ui.js"></script>
+    <script>
+          $( function() {
+                $( "#categories" ).sortable();
+            });
+    </script>
+</head>
+<body>
+    <ol id="categories">
+        <li class="ui-state-default">Electronics</li>
+        <li class="ui-widget-content">Footwear</li>
+        <li class="ui-widget-content">Fashion</li>
+    </ol>
+</body>
+</html>
+
+================================================================================
